@@ -1,0 +1,23 @@
+p{
+  color:seagreen;
+  width:50%;
+  hight: 1000px;
+  border: 1px, solid red;
+  z-index: 10;
+}
+a{
+  color:hotpink;
+  border:1px red
+}
+a:hover{
+  color:black;
+}
+a:first-child{
+  color:green;
+}
+strong {
+  display:block;
+  color:red;
+  border: 1px solid black;
+  margin: ;
+}
