@@ -1,7 +1,7 @@
 p{
-  font-style:italic;
-  font-size:100px;
-  color:seagreen;
+  font-style:Times;
+  font-size:36px;
+  color:black;
   width:80%px;
   hight: 1000px;
   border: 1px, solid red;
@@ -9,16 +9,13 @@ p{
   background-color: orange;
   font-weight: 400;
   height: 1000px;
+  padding:20px;
 }
 a{font-style:Times;
   font-size:100px;
   color:whitesmoke;
-  border:1px solid red:;
-  background-color:red ;
-  border-bottom-left-radius: 60px;
-  border-top-right-radius: 60px;
   position: fixed;
-  top:30px;
+  bottom:70px;
   right:30px;
   z-index:200px;
   mix-blend-mode: multiply;
