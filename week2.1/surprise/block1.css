@@ -445,7 +445,7 @@
 
 .catbowl{
   background: transparent;
-  background-image: url(catbowl.png);
+  background-image: url("catbowl.png");
   background-size: cover;
   height:130px;
   width: 250px;
@@ -457,9 +457,9 @@
 }
 
 
-.catspeak1{
+.catspeak{
   background: transparent;
-  background-image: url(meow.png);
+  background-image: url("meow.png");
   background-size: cover;
   height:250px;
   width: 250px;
