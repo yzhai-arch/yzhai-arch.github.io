@@ -1,4 +1,4 @@
-div{
+.div1{
   border:0px, solid red;
   background-color: orangered;
   height: 2000px;
@@ -331,6 +331,7 @@ div{
   margin-left: 3%;
   padding-left: 7%;
   opacity: 0.4;
+
 }
 .cloud15{
   background-color: slategray;
@@ -344,6 +345,7 @@ div{
   margin-left: 3%;
   padding-left: 7%;
   opacity: 1;
+  background-image: url("stars.gif")
 
 }
 .cloud16{
@@ -443,7 +445,7 @@ div{
 
 .catbowl{
   background: transparent;
-  background-image: url("catbowl.png");
+  background-image: url(catbowl.png);
   background-size: cover;
   height:130px;
   width: 250px;
@@ -455,7 +457,7 @@ div{
 }
 
 
-.catspeak{
+.catspeak1{
   background: transparent;
   background-image: url(meow.png);
   background-size: cover;
