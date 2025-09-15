@@ -389,6 +389,7 @@
   left:20%;
   margin-left:-140px;
 
+
   transform: rotate(deg);
 }
 
@@ -400,8 +401,9 @@
   width: 400px;
   z-index: 125;
   position: absolute;
-  top:1900px;
+  top:97%;
   left:800px;
+  margin-top:1150px;
   transform: rotate(deg);
 }
 
@@ -410,11 +412,11 @@
 .planet{
   background: radial-gradient(circle, rosybrown 30%, green 60%, transparent 70%);
   background-color: transparent;
-  z-index: 130;
+  z-index: 131;
   height: 700px;
   width: 700px;
   top: 1600px;
-  left:1100px;
+  left:70%;
   border-radius: 50%;
   position: absolute;
 }
