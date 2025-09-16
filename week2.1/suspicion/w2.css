@@ -34,7 +34,7 @@
   position:absolute;
   top:45%;
   left:45%;
-  background-color: darkred;
+  background-color: slateblue;
   z-index: 100;
   width: 100px;
   height: 100px;
@@ -89,8 +89,8 @@
   width: 10px;
   position: absolute;
   
-  background-color: black;
-  background: linear-gradient(0deg, white, black);
+  background-color: slateblue;
+  background: linear-gradient(0deg, white, slateblue);
   z-index: 38;
   top: 1px;
   left: 1%;
@@ -104,8 +104,8 @@
   width: 30px;
   position: absolute;
   
-  background-color: black;
-  background: linear-gradient(0deg, white, black);
+  background-color: slateblue;
+  background: linear-gradient(0deg, white, slateblue);
   z-index: 37;
   top: 400px;
   left: 1%;
@@ -119,8 +119,8 @@
   width: 150px;
   position: absolute;
   
-  background-color: black;
-  background: linear-gradient(0deg, white, black);
+  background-color: slateblue;
+  background: linear-gradient(0deg, white, slateblue);
   z-index: 40;
   top: 300px;
   left: 10%;
@@ -129,14 +129,14 @@
   mix-blend-mode: ;
 }
 .whitecube{
-  height: 60px;
+  height: 20px;
   width: 0.05px;
   position: absolute;
   background-image: url("cathide.png");
   background-size: 100% 100%;
   background-color: transparent;
   z-index: 39;
-  top: 400px;
+  top: 200px;
   left: 10%;
   margin-top: 30%;
   padding-left: 40%;
@@ -151,8 +151,8 @@
   width: 40px;
   position: absolute;
   
-  background-color: black;
-  background: linear-gradient(90deg, white, black);
+  background-color: slateblue;
+  background: linear-gradient(90deg, white, slateblue);
   z-index: 40;
   top: 300px;
   right: 0.1%;
@@ -165,8 +165,8 @@
   height: 500px;
   width: 4px;
   position: absolute;
-  background-color: black;
-  background: linear-gradient(90deg, white 20%, black );
+  background-color: slateblue;
+  background: linear-gradient(90deg, white 20%, slateblue );
   z-index: 38;
   top: 1px;
   right:1px;
@@ -178,8 +178,8 @@
   height: 500px;
   width: 100px;
   position: absolute;
-  background-color: black;
-  background: linear-gradient(90deg, white 20%, black);
+  background-color: slateblue;
+  background: linear-gradient(90deg, white 20%, slateblue);
   z-index: 39;
   top: 800px;
   right:1px;
@@ -193,7 +193,7 @@
   width: 1px;
   z-index: 30;
   position: absolute;
-  background-color: darkred;
+  background-color: slateblue;
   border-radius: 30px;
   transform: skewX(20deg);
   top: 60px;
