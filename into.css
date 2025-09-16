@@ -1,0 +1,67 @@
+.background{
+  background-image: url("https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/295513358_392968082975325_1341902667313856180_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=UuXpnRNEALcQ7kNvwHC3rPs&_nc_oc=AdkCYHM-htBs52QVHD2SxGMHFw4gHB8efM_3BryvozPqf7ZMPxV45eop2gB1T5R-e9Q&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=GBfxwGROkm5N6v3HAFDmZA&oh=00_AfY1KM0AEzbLPpNfcBRtURSRcBOLCE5n4WIVoiqpTUXDSQ&oe=68BE47BB");
+  background-size:cover ;
+
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  left: 50%;
+  top: 20%;
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: overlay;
+}
+.back{
+  background-color: goldenrod;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+
+}
+
+p{
+  z-index: 10;
+  left: 50%;
+  top: 33%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-family: Times New Roman;
+  color:aliceblue ;
+
+}
+a{
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-family: Times New Roman; 
+  color:darkred ;
+  margin: 20px auto;
+  text-decoration: none;
+
+}
+a:hover {
+  color:indianred;
+  font-size: 31px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
