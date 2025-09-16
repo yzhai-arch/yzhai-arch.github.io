@@ -48,7 +48,7 @@
   top:47%;
   right:48%;
   margin-right: 5px;
-  background-color: blue;
+  background-color: yellow;
   z-index: 80;
   width: 30px;
   height: 30px;
@@ -74,7 +74,7 @@
 
 
 .background{
-  height: 100%;          /* 改成视口高度 */
+  height: 100%;          
   width: 205px;
   position: fixed;
   top: 0px;
