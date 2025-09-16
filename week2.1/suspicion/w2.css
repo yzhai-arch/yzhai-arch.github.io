@@ -1,0 +1,303 @@
+.div1{
+  height: 20vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.lineup{
+  top: 0px;
+  right: 0px;
+  position: relative;
+  
+}
+
+
+.center{
+  background-color: white;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: difference;
+ 
+
+}
+
+
+
+.ball1{
+  position:absolute;
+  top:45%;
+  left:45%;
+  background-color: darkred;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  animation:orbit 0s linear infinite;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+}
+
+.ball2{
+  position: absolute;
+  top:47%;
+  right:48%;
+  margin-right: 5px;
+  background-color: blue;
+  z-index: 80;
+  width: 30px;
+  height: 30px;
+  mix-blend-mode: normal;
+  border-radius: 50%;
+  
+}
+.ball3{
+  position: absolute;
+  bottom: -20px;
+  margin-right: 50px;
+  border:2px solid darkblue;
+  margin-right: 5px;
+  background-color: transparent;
+  z-index: 80;
+  width: 150px;
+  height: 100px;
+  padding-left: 4%;
+  mix-blend-mode: normal;
+  border-radius: 50%;
+  
+}
+
+
+.background{
+  height: 100%;          /* 改成视口高度 */
+  width: 205px;
+  position: fixed;
+  top: 0px;
+  left: 40%;
+  mix-blend-mode: ;
+  background-color: ; 
+ 
+}
+
+.whitecube1{
+  height: 500px;
+  width: 10px;
+  position: absolute;
+  
+  background-color: black;
+  background: linear-gradient(0deg, white, black);
+  z-index: 38;
+  top: 1px;
+  left: 1%;
+  margin-top: 30px;
+  padding-left: 40%;
+  mix-blend-mode: overlay;
+}
+
+.whitecube2{
+  height: 500px;
+  width: 30px;
+  position: absolute;
+  
+  background-color: black;
+  background: linear-gradient(0deg, white, black);
+  z-index: 37;
+  top: 400px;
+  left: 1%;
+  margin-top: 30px;
+  padding-left: 40%;
+  mix-blend-mode: overlay;
+}
+
+.whitecube3{
+  height: 900px;
+  width: 150px;
+  position: absolute;
+  
+  background-color: black;
+  background: linear-gradient(0deg, white, black);
+  z-index: 40;
+  top: 300px;
+  left: 10%;
+  margin-top: 30px;
+  padding-left: 20px;
+  mix-blend-mode: ;
+}
+.whitecube{
+  height: 60px;
+  width: 0.05px;
+  position: absolute;
+  background-image: url("cathide.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  z-index: 39;
+  top: 400px;
+  left: 10%;
+  margin-top: 30%;
+  padding-left: 40%;
+  padding-top: 30%;
+  mix-blend-mode: normal;
+}
+
+
+
+.whitecube4{
+  height: 300px;
+  width: 40px;
+  position: absolute;
+  
+  background-color: black;
+  background: linear-gradient(90deg, white, black);
+  z-index: 40;
+  top: 300px;
+  right: 0.1%;
+  margin-top: 30px;
+  padding-right: 30%;
+  mix-blend-mode: overlay;
+}
+
+.whitecube5{
+  height: 500px;
+  width: 4px;
+  position: absolute;
+  background-color: black;
+  background: linear-gradient(90deg, white 20%, black );
+  z-index: 38;
+  top: 1px;
+  right:1px;
+  margin-top: 30px;
+  padding-right: 30%;
+  
+}
+.whitecube6{
+  height: 500px;
+  width: 100px;
+  position: absolute;
+  background-color: black;
+  background: linear-gradient(90deg, white 20%, black);
+  z-index: 39;
+  top: 800px;
+  right:1px;
+  margin-top: 30px;
+  padding-right: 30%;
+  
+}
+
+.bullet{
+  height: 900px;
+  width: 1px;
+  z-index: 30;
+  position: absolute;
+  background-color: darkred;
+  border-radius: 30px;
+  transform: skewX(20deg);
+  top: 60px;
+  right: 30%;
+  margin-top: 10px;
+  animation: rotateself 2s linear infinite;
+
+}
+@keyframes rotateself {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bigbullet{
+  animation: blink 1.5s  infinite;
+  top: 10px;
+  width: 100px;
+  position: absolute;
+
+}
+@keyframes blink {
+  20%， 100% {opacity: 1;}
+  50% {opacity: 0;}
+
+}
+
+
+.bigbullet1{
+  animation: blink 1.5s  infinite;
+  top: 10%;
+  position: absolute;
+}
+@keyframes blink {
+  20%， 100% {opacity: 1;}
+  50% {opacity: 0;}
+}
+
+.bigbullet3{
+  animation: blink 1.5s  infinite;
+  top: 30px;
+  position: absolute;
+}
+@keyframes blink {
+  20%， 100% {opacity: 1;}
+  50% {opacity: 0;}
+
+}
+.bigbullet4{
+  animation: blink 1.5s  infinite;
+  top: 60%;
+  left: 20%;
+  position: absolute;
+  z-index: 100;
+}
+@keyframes blink {
+  20%， 100% {opacity: 1;}
+  50% {opacity: 0;}
+
+}
+
+.bigbullet5{
+  animation: blink 1.5s  infinite;
+  top: -60%;
+  left: 20%;
+  position: absolute;
+}
+@keyframes blink {
+  20%， 100% {opacity: 1;}
+  50% {opacity: 0;}
+
+}
+.bigbullet6{
+  animation: blink 1.5s  infinite;
+  top: -90%;
+  left: 80%;
+  position: absolute;
+}
+@keyframes blink {
+  20%， 100% {opacity: 1;}
+  50% {opacity: 0;}
+
+}
+.bigbullet7{
+  animation: blink 1.5s  infinite;
+  top: 90%;
+  left: 70%;
+  position: absolute;
+}
+@keyframes blink {
+  20%， 100% {opacity: 1;}
+  50% {opacity: 0;}
+
+}
+
+
+
+
+
+
+
+
+
+
