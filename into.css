@@ -34,10 +34,10 @@ p{
   color:aliceblue ;
 
 }
-a{
+.main{
   z-index: 10;
   left: 50%;
-  top: 50%;
+  top: 350px;
   position: absolute;
   transform: translate(-50%, -50%);
   font-size: 30px;
@@ -47,11 +47,36 @@ a{
   text-decoration: none;
 
 }
-a:hover {
+.main:hover {
   color:indianred;
   font-size: 31px;
 }
 
+
+.big{
+  position: absolute;         
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: ;           
+  gap: 20px;
+  z-index: 100;                  
+}
+
+.small {
+  font-size: 23px;
+  font-family: "Times New Roman";
+  color: aliceblue;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.small:hover {
+  opacity: 1;
+  color: darkred;
+}
 
 
 
