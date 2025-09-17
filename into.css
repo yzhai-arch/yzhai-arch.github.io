@@ -54,10 +54,10 @@ p{
 
 
 .big{
-  position: absolute;         
+  position: fixed;         
   top: 400px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   display: flex;
   flex-direction: ;           
   gap: 20px;
