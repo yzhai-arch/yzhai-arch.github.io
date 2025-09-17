@@ -1,0 +1,372 @@
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fatcat{
+  background-image: url("fatcat.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 450px;
+  left: 550px;
+  transform:  rotate(-20deg); 
+  height: 150px;
+  width: 150px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat:hover {
+  opacity: 100%;
+  height: 150px;
+  width: 150px;
+  animation: disapear 2s forwards;
+
+}
+
+@keyframes disapear{
+  0%{opacity: 0%}
+  70%{opacity: 100%}
+  100%{opacity: 100%}
+}
+
+
+.word{
+  font-size: 80px;
+  font-family: Futura;
+  font-weight: bold;
+  z-index: 2;
+  background-color: transparent;
+  display: flex;
+  position: fixed;
+  top:0px;
+  
+  justify-content: center;
+  color: lightpink;
+  animation: changecolor 3s infinite;
+}
+@keyframes changecolor{
+  0% { color:lightpink;}
+  50% {color:aliceblue;}
+  100% { color:lightpink;}
+}
+
+
+.background{
+  background-image: url("background.jpeg");
+  background-size: cover;
+  width: 3000px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index:0 ;
+  opacity: 90%;
+}
+
+
+.meow{
+  font-size: 30px;
+  font-family: Comic Sans MS;
+  font-weight: bold;
+  z-index: 20;
+  background-color: whitesmoke;
+  display: flex;
+  position: absolute;
+  top:300px;
+  left: 300px;
+  justify-content: center;
+  color: black;
+  animation: vanish 4s infinite;
+  border-radius: 70%;
+  mix-blend-mode: screen;
+}
+@keyframes vanish{
+  0%{opacity: 100%}
+  20%{opacity: 0%}
+  100%{opacity: 0%}
+}
+.location{
+  display: flex;
+  animation: move 20s infinite;
+  position: absolute;
+}
+
+@keyframes move{
+  0%{top:300px; left: 200px;}
+  5%{top:300px; left: 200px;}
+  10%{top:100px; left: 400px;}
+  15%{top:100px; left: 400px;}
+  20%{top:0px; left: 2500px;}
+  25%{top:0px; left: 2500px;}
+  30%{top:-30px; left: 600px;}
+  35%{top:-30px; left: 600px;}
+  40%{top:300px; left: 1000px;}
+  45%{top:300px; left: 1000px;}
+  50%{top:-10px; left: 200px;}
+  55%{top:-10px; left: 200px;}
+  60%{top:0px; left: 1200px;}
+  65%{top:0px; left: 1200px;}
+  70%{top:250px; left: 1400px;}
+  75%{top:250px; left: 1400px;}
+  80%{top:50px; left: 2000px;}
+  85%{top:50px; left: 2000px;}
+  90%{top:50px; left: 100px;}
+  95%{top:50px; left: 100px;}
+  100%{top:50px; left: 100px;}
+
+
+}
+
+
+
+
+.fatcat1{
+  background-image: url("fatcat1.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 600px;
+  left: 180px;
+  transform:  rotate(deg); 
+  height: 150px;
+  width: 150px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat1:hover {
+  opacity: 100%;
+  height: 150px;
+  width: 150px;
+  animation: disapear 2s forwards;
+
+}
+
+.fatcat2{
+  background-image: url("fatcat2.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 450px;
+  left: 1500px;
+  transform:  rotate(deg); 
+  height: 75px;
+  width: 200px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat2:hover {
+  opacity: 100%;
+  height: 75px;
+  width: 200px;
+  animation: disapear 2s forwards;
+
+}
+
+.fatcat3{
+  background-image: url("fatcat3.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 300px;
+  left: 2150px;
+  transform:  rotate(deg); 
+  height: 150px;
+  width: 150px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat3:hover {
+  opacity: 100%;
+  height: 150px;
+  width: 150px;
+  animation: disapear 2s forwards;
+
+}
+
+.fatcat4{
+  background-image: url("fatcat4.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 400px;
+  left: 1000px;
+  transform:  rotate(deg); 
+  height: 75px;
+  width: 125px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat4:hover {
+  opacity: 100%;
+  height: 75px;
+  width: 125px;
+  animation: disapear 2s forwards;
+
+}
+.fatcat5{
+  background-image: url("fatcat5.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  transform:  rotate(deg); 
+  height: 150px;
+  width: 170px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat5:hover {
+  opacity: 100%;
+  height: 150px;
+  width: 170px;
+  animation: disapear 2s forwards;
+
+}
+
+.fatcat6{
+  background-image: url("fatcat6.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 100px;
+  left: 1350px;
+  transform:  rotate(90deg); 
+  height: 230px;
+  width: 115px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat6:hover {
+  opacity: 100%;
+  height: 230px;
+  width: 115px;
+  animation: disapear 2s forwards;
+
+}
+
+.fatcat7{
+  background-image: url("fatcat7.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 420px;
+  left: 2750px;
+  transform:  rotate(-10deg); 
+  height: 210px;
+  width: 105px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat7:hover {
+  opacity: 100%;
+  height: 210px;
+  width: 105px;
+  animation: disapear 2s forwards;
+}
+
+.fatcat8{
+  background-image: url("fatcat8.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 630px;
+  left: 1200px;
+  transform:  rotate(8deg); 
+  height: 120px;
+  width: 120px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat8:hover {
+  opacity: 100%;
+  height: 120px;
+  width: 120px;
+  animation: disapear 2s forwards;
+
+}
+
+.fatcat9{
+  background-image: url("fatcat9.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 370px;
+  left: 1240px;
+  transform:  rotate(deg); 
+  height: 100px;
+  width: 120px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat9:hover {
+  opacity: 100%;
+  height: 100px;
+  width: 120px;
+  animation: disapear 2s forwards;
+
+}
+.fatcat10{
+  background-image: url("fatcat10.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  left: 2730px;
+  transform:  rotate(-28deg); 
+  height: 150px;
+  width: 250px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat10:hover {
+  opacity: 100%;
+  top: -17px;
+  left: 2780px;
+  transform:  rotate(-28deg); 
+  height: 150px;
+  width: 250px;
+  animation: disapear 2s forwards;
+
+}
+
+
+.fatcat11{
+  background-image: url("fatcat11.png");
+  background-size: 100% 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 600px;
+  left: 1900px;
+  transform:  rotate(deg); 
+  height: 150px;
+  width: 300px;
+  z-index: 10;
+  opacity: 0%;
+  
+}
+.fatcat11:hover {
+  opacity: 100%;
+  height: 150px;
+  width: 300px;
+  animation: disapear 2s forwards;
+
+}
+
+
+
+
+
