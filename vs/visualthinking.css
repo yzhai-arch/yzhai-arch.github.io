@@ -1,0 +1,173 @@
+.image{
+  background-image: url("image.png");
+  background-size: cover;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  left: 200px;
+  height: 770px;
+  width: 600px;
+  z-index: 12;
+  transition: all 0.7s ease;
+  color: transparent;
+}
+.image:hover{
+  background-image: url("image1.png");
+  color: gray;
+
+
+}
+.cloud{
+  background-image: url("cloud.png");
+  background-size: cover;
+  background-color: transparent;
+  position: fixed;
+  width: 1000px;
+  height: 1000px;
+  z-index: 9;
+  top: -400px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 770px;
+  width: 770px;
+  transform-origin: center center;
+  animation: spin 10s ease-in-out infinite;
+}
+@keyframes spin {
+  0%   { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+
+.circle{
+  background-color: aliceblue;
+  border-radius: 100%;
+  z-index: 7;
+  position: fixed;
+  width: 1300px;
+  height: 1300px;
+  top: -650px;
+  left:50%;
+  transform: translateX(-50%);
+  animation: fade 5s infinite;
+  background: radial-gradient(circle, transparent 40%, gray 50%, transparent 70%); 
+}
+@keyframes fade{
+  0%{opacity: 0.2}
+  50%{opacity: 1}
+  100%{opacity: 0.2}
+
+}
+.circle1{
+  background-color: aliceblue;
+  border-radius: 100%;
+  z-index: 6;
+  position: fixed;
+  width: 1100px;
+  height: 1100px;
+  top: -550px;
+  left:50%;
+  transform: translateX(-50%);
+  animation: fade1 4s infinite;
+  background: radial-gradient(circle, transparent 40%, #3e6377 50%, transparent 65%); 
+}
+@keyframes fade1{
+  0%{opacity: 1}
+  50%{opacity: 0.2}
+  100%{opacity: 1}
+}
+.circle2{
+  background-color: white;
+  border-radius: 100%;
+  z-index: 5;
+  position: fixed;
+  width: 1700px;
+  height: 1700px;
+  top: -550px;
+  left:50%;
+  transform: translateX(-50%);
+  animation: fade2 10s infinite;
+  background: radial-gradient(circle, transparent 45%, darkslategray 50%, transparent 55%); 
+
+}
+@keyframes fade2{
+  0%{opacity: 0}
+  70%{opacity: 0.7}
+  100%{opacity: 0}
+
+}
+
+
+.see{
+  font-family: Times new roman;
+  font-size: 30px;
+  color: gray;
+  position: absolute;
+  top: 300px;
+  right: 100px;
+  
+}
+
+.see1{
+  font-family: Times new roman;
+  font-size: 30px;
+  color: transparent;
+  position: absolute;
+  top: 330px;
+  right: 100px;
+  transition: all 0.3s ease;
+  border:1px solid #3e6377;
+  text-decoration: none;
+  z-index: 11;
+}
+.see1:hover{
+  color:#3e6377 ;
+}
+.sun {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  z-index:11;
+  border-radius: 100%;
+  background: radial-gradient(circle, black 60%, transparent 70%);
+  transition: all 2s ease; /* 平滑过渡 */
+}
+.sun:hover {
+  width: 3000px;   /* 变大到比屏幕还大 */
+  height: 3000px;
+  top: -1000px;    /* 调整位置，保证中心点覆盖 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+}
+.see2{
+  font-family: Times new roman;
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 700px;
+  right: 450px;
+  z-index: 12;
+  
+}
+
+.hand2{
+  background-color: transparent;
+  background-image: url("hand2.png");
+  background-size: cover;
+  z-index: 8;
+  position: fixed;
+  top: -500px;
+  left:50%;
+  transform: translateX(-50%);
+  mix-blend-mode: overlay;
+  width: 1900px;
+  height: 1370px;
+  opacity: 0.3;
+  filter: blur(6px);
+}
+
+
