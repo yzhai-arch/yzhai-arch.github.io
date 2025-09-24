@@ -45,8 +45,41 @@
 
   margin-top:60px;
   z-index: 100;
- ]
+  
+}
+.horizontal:hover{
+  width: 100%;
+  height: 70px;
+  animation: bounce 1s forwards;
 
+}
+@keyframes bounce{
+  0%{
+    width: 100%;
+    height: 70px;
+  }
+  20%{
+    width: 70%;
+    height: 100px;
+  }
+  40%{width: 110%;
+    height: 60px}
+  50%{
+    width: 90%;
+    height: 80px;
+  }
+  55%{
+    width: 105%;
+    height: 65;
+  }
+  60%{
+    width: 98%;
+    height: 74px;
+  }
+  75%{
+    width: 100%;
+    height: 70px;
+  }
 }
 
 .rain{
@@ -74,9 +107,30 @@
   animation: drop 4s linear infinite;
   z-index: 90;
 }
+
 @keyframes drop {
-  0%{top:0;}
-  100%{top:100vh;}
+  0%{
+    top:0;
+    width: 60px;
+    height: 60px;
+    color: darkblue;
+    border-radius: 0%;
+  }
+  50%{
+    top:50vh;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    color: darkblue;
+  
+  }
+  100%{
+    top:100vh;
+    width: 60px;
+    height: 60px;
+    color: orangered;
+    border-radius: 0%;    
+  }
 }
 .rain2{
   width: 30px;
