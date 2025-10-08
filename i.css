@@ -34,7 +34,7 @@ p{
   color:aliceblue ;
 
 }
-.main{
+.main0{
   z-index: 10;
   left: 50%;
   top: 350px;
@@ -43,7 +43,24 @@ p{
   font-size: 30px;
   font-family: Times New Roman; 
   color:darkred ;
-  margin: 20px auto;
+  margin-top: 20px ;
+  text-decoration: none;
+
+}
+.main0:hover {
+  color:indianred;
+  font-size: 31px;
+}
+.main{
+  z-index: 10;
+  left: 50%;
+  top: 410px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-family: Times New Roman; 
+  color:darkred ;
+  margin-top: 20px ;
   text-decoration: none;
 
 }
@@ -51,11 +68,28 @@ p{
   color:indianred;
   font-size: 31px;
 }
+.main1{
+  z-index: 10;
+  left: 50%;
+  top: 480px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-family: Times New Roman; 
+  color:darkred ;
+  margin-top: 20px ;
+  text-decoration: none;
+
+}
+.main1:hover {
+  color:indianred;
+  font-size: 31px;
+}
 
 
 .big{
-  position: fixed;         
-  top: 400px;
+  position: absolute;         
+  top: 450px;
   left: 50%;
   transform: translate(-50%, 0%);
   display: flex;

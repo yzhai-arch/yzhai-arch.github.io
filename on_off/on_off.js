@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const butt1 = document.querySelectorAll('.butt1');
   const butt2 = document.querySelectorAll('.butt2');
   const shit = document.querySelectorAll('.shit');
+  const word = document.querySelectorAll('.word');
   let clickCount = 0;
 
   buttons.forEach(function(button) {
@@ -56,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
         humans.forEach(function(div) {
           div.classList.add('bigger');
         });
+        word.forEach(function(div) {
+          div.classList.add('disapear');
+        });
       }
 
 
@@ -73,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       if (clickCount === 17) {  
-        button.classList.add('biggerer')
+        
         neis.forEach(function(div) {
           div.classList.add('biggerer');
         });
@@ -84,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
 
-       if (clickCount === 22) {  
-        button.classList.add('biggerer')
+       if (clickCount === 20) {  
+        
         
         humans.forEach(function(div) {
           div.classList.add('biggerer');
@@ -95,19 +99,45 @@ document.addEventListener("DOMContentLoaded", function () {
         })
       }
 
-       if (clickCount === 29) {  
-        button.classList.add('biggererer')
+
+      if (clickCount === 25) {  
+        button.classList.add('biggerer')
+       
+         
+      }
+
+       if (clickCount === 30) {  
+        
         
         neis.forEach(function(div) {
           div.classList.add('biggerer');
         });  
+        
+      }
+
+       if (clickCount === 34) {  
+        
+        
+        
         changs.forEach(function(div){
           div.classList.add('bigger')
         })
       }
 
 
-       if (clickCount === 36) {  
+
+       if (clickCount === 39) {  
+        button.classList.add('biggererer')
+       
+      }
+
+
+
+
+
+
+
+       if (clickCount === 46) {  
         button.classList.add('biggerererer')
         
         humans.forEach(function(div) {
@@ -121,32 +151,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
-
-
-      if (clickCount === 46) {  
+      if (clickCount === 53) {  
         button.classList.add('biggererererer')
         neis.forEach(function(div) {
           div.classList.add('biggest');
         });
-        humans.forEach(function(div) {
-          div.classList.add('biggest');
-        });  
+         
         changs.forEach(function(div) {
           div.classList.add('biggest');
         }); 
       }
 
-      if (clickCount === 55) {  
+
+
+       if (clickCount === 60) {  
+        humans.forEach(function(div) {
+          div.classList.add('biggest');
+        });  
+      }
+
+
+      if (clickCount === 68) {  
+        neis.forEach(function(div) {
+          div.classList.add('biggerer');
+        });
+        
+        humans.forEach(function(div) {
+          div.classList.add('big');
+        });  
+        
+      }
+
+
+      if (clickCount === 75) {  
         button.classList.add('biggest')
       }
 
 
 
-      if (clickCount === 60) {  
+      if (clickCount === 80) {  
         fronts.forEach(function(div) {
           div.classList.add('show');
         });
@@ -158,19 +201,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         shit.forEach(function(div) {
           div.classList.add('show');
-        });
-        shit.forEach(function(div) {
-          div.classList.add('show');
-        });
-      }
-
       
-
-
-
-
+            div.classList.add('animate');  
+          }, 100);
+        
+      }
 
 
     });
   });
+
+  shit.forEach(function(div) {
+  div.addEventListener('click', function (event) {
+    event.stopPropagation();
+    console.log("shit clicked but no reset!");
+  });
 });
+
+
+
+
+
+
+
+});
+
+
+
+
+
