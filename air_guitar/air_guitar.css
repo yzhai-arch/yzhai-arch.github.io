@@ -1,0 +1,504 @@
+/*body{
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;           
+  margin: 0;
+}*/
+.word{
+  font-size: 100px;
+}
+
+.n1{
+  background-color: transparent;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 100px;
+  font-size: 20px;
+  font-family: STKaiti;
+  transition: ;
+  z-index: 2;
+}
+.n1.big{
+  font-size: 0px;
+  transition: ;
+  background-image: url("eye1.png");
+  background-size: cover;
+  background-color: transparent;
+  height: 700px;
+  width: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: b-w 2s infinite;
+}
+@keyframes b-w{
+  0%{filter: blur(0px) grayscale(0);}
+  50%{filter: blur(1px) grayscale(0.2);}
+  60%{filter:  blur(3px) grayscale(0.8);}
+  80%{filter: blur(0px) grayscale(0.3);}
+
+}
+
+.n1.bigger{
+  font-size: 0px;
+  transition: transform 1s ;
+  background-image: url("eyes.png");
+  background-size: cover;
+  background-color: transparent;
+  height: 1000px;
+  width: 1000px;
+  top: 50%;
+  right: 0px;
+
+  
+}
+
+
+
+
+.n2{
+  background-color: transparent;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 200px;
+  z-index: 2;
+  right: 0px;
+  font-size: 20px;
+  font-family: STKaiti;
+}
+.n2.big{
+  font-size: 0px;
+  transition: transform 0.4s ease;
+  background-image: url("bird.gif");
+  background-size: cover;
+  background-color: transparent;
+  height: 300px;
+  width: 300px;
+  top: 50%;
+  right: 0px;
+
+}
+.n2.bigger{
+  
+  transition: transform 0.4s ease;
+  background-image: url("bird.gif");
+  background-size: cover;
+  background-color: transparent;
+  height: 500px;
+  width: 500px;
+  right: 0px;
+  animation: bounce 1s infinite;
+
+}
+@keyframes bounce{
+  0%{transform: scaleY(1.0);}
+  30%{transform: scaleY(1.2);}
+  55%{transform: scaleY(0.9);}
+  70%{transform: scaleY(1.08);}
+  80%{transform: scaleY(0.95);}
+  85%{transform: scaleY(1.03);}
+  90%{transform: scaleY(0.98);}
+  100%{transform: scaleY(1.0);}
+
+}
+
+.n3{
+  background-color: transparent;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 200px;
+  z-index: 2;
+}
+.n3.big{
+  background-size: cover;
+  background-image: url("star.gif");
+  transition: transform 0.4s ease;
+  height: 1400px;
+  width: 1400px;
+  top: 0px;
+  left: 0px;
+  z-index: 30;
+  mix-blend-mode: overlay
+;
+
+}
+.n3.bigger{
+  background-size: cover;
+  background-image: url("star.gif");
+  transition: transform 0.4s ease;
+  height: 1400px;
+  width: 1400px;
+  top: 0px;
+  left: 0px;
+  z-index: 30;
+  mix-blend-mode: color-burn
+;
+
+}
+.n4{
+  background-color: transparent;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 10px;
+  z-index: 2;
+}
+.n4.big{
+  
+  transition: transform 0.4s ease;
+  background-size: cover;
+  background-image: url("200.gif");
+  transition: transform 0.4s ease;
+  height: 200px;
+  width: 200px;
+  top: 30px;
+  left: 300px;
+  z-index: 30;
+  mix-blend-mode: color-burn
+
+
+}
+.n4.bigger{
+  
+  transition: transform 0.4s ease;
+  background-size: cover;
+  background-image: url("200.gif");
+  transition: transform 0.4s ease;
+  height: 400px;
+  width: 400px;
+  top: 30px;
+  left: 300px;
+  z-index: 30;
+  mix-blend-mode: lighten
+
+
+}
+
+
+.n5{
+  background-color: transparent;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 10px;
+}
+.n5.big{
+  background-size: cover;
+  background-image: url("graysky.jpg");
+  transition: transform 0.4s ease;
+  height: 1400px;
+  width: 1400px;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  filter: invert(1);
+}
+
+.n6{
+  background-color: transparent;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 10px;
+  z-index: 2;
+}
+.n6.big{
+  background-image: url("dotss.gif");
+  transition: transform 0.4s ease;
+  height: 400px;
+  width: 400px;
+  top: 0px;
+  left: 0px;
+  z-index: 18;
+  animation:moveup 2s infinite;
+}
+@keyframes moveup{
+  0%{top: -200px;}
+  100%{top: 1600px;}
+}
+.n6.bigger{
+  background-image: url("dotss.gif");
+  transition: transform 0.4s ease;
+  height: 300px;
+  width: 600px;
+  top: 0px;
+  left: 800px;
+  z-index: 18;
+  animation:moveup1 2s infinite;
+}
+@keyframes moveup1{
+  0%{top: -200px;}
+  50%{top: 1600px;}
+  100%{top: 1600px;}
+}
+
+.n7{
+  background-color: transparent;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 700px;
+  font-size: 20px;
+  font-family: STKaiti;
+  z-index: 2;
+}
+.n7.big{
+  
+  transition: transform 0.4s ease;
+  background-image: url("bird2.gif");
+  background-size: cover;
+  background-color: transparent;
+  height: 200px;
+  width: 300px;
+  left: -100px;
+  top: 100px;
+}
+.n7.bigger{
+  
+  transition: transform 0.4s ease;
+  background-image: url("bird2.gif");
+  background-size: cover;
+  background-color: transparent;
+  height: 300px;
+  width: 450px;
+  left: -130px;
+  animation: bounce 1s infinite;
+
+}
+@keyframes bounce{
+  0%{transform: scaleY(1.0);}
+  30%{transform: scaleY(1.2);}
+  55%{transform: scaleY(0.9);}
+  70%{transform: scaleY(1.08);}
+  80%{transform: scaleY(0.95);}
+  85%{transform: scaleY(1.03);}
+  90%{transform: scaleY(0.98);}
+  100%{transform: scaleY(1.0);}
+
+}
+.n8{
+  background-color: transparent;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 10px;
+  z-index: 2;
+}
+.n8.big{
+  transition: transform 0.4s ease;
+  background-image: url("chang.png");
+  background-size: cover;
+  background-color: transparent;
+  height: 800px;
+  width: 800px;
+  left: -100px;
+  top: 100px;
+  filter: blur(3px);
+  animation: rotate 10s infinite;
+
+}
+@keyframes rotate{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.n8.bigger{
+  transition: transform 0.4s ease;
+  background-image: url("chang.png");
+  background-size: cover;
+  background-color: transparent;
+  height: 900px;
+  width: 900px;
+  left: 300px;
+  top: 50px;
+  filter: blur(3px);
+  animation: rotate 6s infinite;
+
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 130px;
+  margin: px;
+
+  width: 2000px;
+  height: 1500px;
+  left: 10px;
+  position: absolute;
+}
+
+.n9{
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: darkgray;
+  background: radial-gradient(white 0%, black 30%, transparent 70%);
+  z-index: 20;
+  animation: change 1.5s infinite;
+  transition: all 0.6s ease;
+}
+.n9.big{
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(darkred 20%, black 50%, transparent 70%);
+  animation: change1 1.2s infinite;
+
+}
+.n9.bigger{
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(white 40%, black 50%,  transparent 70%);
+  animation: change2 0.8s infinite;
+
+}
+
+
+@keyframes change{
+  0%{
+    transform: skewX(0deg) skewY(0deg);
+    opacity: 1;
+  }
+  10%{
+    transform: skewX(10deg) skewY(0deg);
+    opacity: 0.8;
+  }
+  30%{
+    transform: skewX(-30deg) skewY(-20deg);
+    opacity: 1;
+  }
+
+  50%{
+    transform: skewX(0deg) skewY(70deg);
+    opacity: 0.8;
+  }
+  100%{
+    transform: skewX(0deg) skewY(0deg);
+    opacity: 1;
+  }
+}
+@keyframes change1{
+  0%{
+    transform:  skewX(0deg) skewY(0deg);
+    opacity: 1;
+  }
+  10%{
+    transform:  skewX(20deg) skewY(10deg);
+    opacity: 0.8;
+  }
+  30%{
+    transform:  skewX(-40deg) skewY(-50deg);
+    opacity: 1;
+  }
+
+  50%{
+    transform:  skewX(0deg) skewY(80deg);
+    opacity: 0.8;
+  }
+  100%{
+    transform:  skewX(0deg) skewY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes change2{
+  0%{
+    transform:  skewX(0deg) skewY(0deg);
+    opacity: 1;
+  }
+  10%{
+    transform:  skewX(10deg) skewY(0deg);
+    opacity: 0.8;
+  }
+  30%{
+    transform:  skewX(-30deg) skewY(-20deg);
+    opacity: 1;
+  }
+
+  50%{
+    transform:  skewX(0deg) skewY(70deg);
+    opacity: 0.8;
+  }
+  100%{
+    transform:  skewX(0deg) skewY(0deg);
+    opacity: 1;
+  }
+}
+
+.n0{
+  background-color: transparent;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 700px;
+  font-size: 20px;
+  font-family: STKaiti;
+  z-index: 2;
+}
+.n0.big{
+  
+  transition: transform 0.4s ease;
+  background-image: url("flower.png");
+  background-size: 50%,20%;
+  background-color: transparent;
+  height: 1000px;
+  width:1000px;
+  left: 100px;
+  top: 100px;
+  animation: move 5s infinite;
+}
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  20% {
+    transform: translate(100px, 50px) rotate(15deg);
+  }
+  40% {
+    transform: translate(-50px, 100px) rotate(-10deg);
+  }
+  60% {
+    transform: translate(150px, -80px) rotate(20deg);
+  }
+  80% {
+    transform: translate(-100px, -50px) rotate(-15deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+.n0.bigger{
+  
+  transition: transform 0.4s ease;
+  background-image: url("flower.png");
+  background-size: cover;
+  background-color: transparent;
+  height: 2000px;
+  width: 1000px;
+  left: -130px;
+  top: -100px;
+  animation: move 2s infinite;
+ 
+
+}
+
+
+
+
+
+

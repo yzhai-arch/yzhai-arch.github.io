@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const word = document.querySelectorAll('.word');
   let clickCount = 0;
 
+console.log("JS loaded");
+
   buttons.forEach(function(button) {
     button.addEventListener('click', function () {
       clickCount++;
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.classList.add('big');
         
       }
+      console.log("Button clicked", clickCount);
       
 
       if (clickCount === 3) {  
@@ -177,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
         humans.forEach(function(div) {
-          div.classList.add('big');
+          div.classList.add('biggererer');
         });  
         
       }
@@ -201,32 +204,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         shit.forEach(function(div) {
           div.classList.add('show');
-      
-            div.classList.add('animate');  
-          }, 100);
-        
+        });
+        shit.forEach(function(div) {
+          div.classList.add('show');
+        });
       }
-
-
     });
   });
-
-  shit.forEach(function(div) {
-  div.addEventListener('click', function (event) {
-    event.stopPropagation();
-    console.log("shit clicked but no reset!");
-  });
 });
-
-
-
-
-
-
-
-});
-
-
-
-
-

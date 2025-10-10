@@ -72,7 +72,7 @@ body{
   width: 100px;
   
   border-radius: 50%;
-  z-index: 30;
+  z-index: 300;
   background: radial-gradient(circle, black 50%, transparent 60%);
   animation: blur 0.8s infinite;
   transition: all 1s ease;
@@ -504,12 +504,13 @@ body{
   position:absolute ;
   height: 2000px;
   width: 2000px;
-  z-index: 100;
+  z-index: 10;
   transform: all 0.6s ease;
 }
 .front.show{
   opacity: 1;
   display: block;
+  z-index: 100;
 
 }
 .butt1{
