@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
         const human = document.querySelector(".human");
+        const left = document.querySelector(".left");
+        const right = document.querySelector(".right");
+        const background = document.querySelector(".background");
         let clickCount = 0;
-
 
         human.addEventListener("click", function () {
           clickCount++;
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let posX = humanX + X;
             let posY = humanY + Y;
+            //conculation of the range
 
             
             posX = Math.max(minX, Math.min(maxX, posX));
@@ -39,10 +42,22 @@ document.addEventListener("DOMContentLoaded", function () {
             symbol.style.left = posX + "px";
             symbol.style.top = posY + "px";
             symbol.style.fontSize = (Math.random() * 60 + 10) + "px";
-        
+
 
             document.body.appendChild(symbol);
           }
+        });
+
+        // change background
+        left.addEventListener("click", function () {
+          background.classList.add('big');
+          document.querySelectorAll(".symbol").forEach(s => s.classList.add('big'));
+        });
+
+        
+        right.addEventListener("click", function () {
+          background.classList.remove('big');
+          document.querySelectorAll(".symbol").forEach(s => s.classList.remove('big'));
         });
       });
 
