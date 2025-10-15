@@ -1,0 +1,126 @@
+.circle {
+  background-color: transparent;
+  background-image: url("circle.png");
+  background-size: cover;
+  border-radius: 50%;
+  height: 800px;
+  width: 800px;
+  top: -500px;
+  left: 100px;
+  position: absolute;
+  animation: blurr 2s infinite;
+  }
+  @keyframes blurr{
+    0%{
+      filter: blur(0px);
+    }
+     30%{
+      filter: blur(2px);
+    }
+     60%{
+      filter: blur(10px);
+    }
+     90%{
+      filter: blur(40px);
+    }
+     100%{
+      filter: blur(0px);
+    }
+
+  }
+
+.words{
+  background-color: transparent;
+  border-radius: 2px solid red;
+  height: 800px;
+  width: 2%;
+  color: darkgray;
+  top: 0px;
+  left: 350px;
+  font-size: 15px;
+  letter-spacing: -6px;
+  position: absolute;
+  animation: change 2s infinite;
+}
+@keyframes change{
+  0%{top: -300px;letter-spacing: -6px;}
+  30%{top: -240px;letter-spacing: -3px;}
+  60%{top: -150px;letter-spacing: 0px;}
+  90%{top: 0px;letter-spacing: 3px;}
+
+  100%{top: -300px;letter-spacing: -6px;}
+}
+.words1{
+  background-color: transparent;
+  border-radius: 2px solid red;
+  height: 800px;
+  width: 1.5%;
+  color: black;
+  font-style: bold;
+  top: 0px;
+  left: 850px;
+  font-size: 20px;
+  letter-spacing: -9px;
+  position: absolute;
+  animation: change 1s infinite;
+  text-shadow: horizontal-offset vertical-offset blur-radius color;
+}
+
+
+.r1{background-color: transparent;
+  background-image: url("circle2.png");
+  background-size: 100% 100%;
+  border-radius: 50%;
+  height: 800px;
+  width: 1500px;
+  bottom: -300px;
+  left: -300px;
+  position: absolute;
+  animation: wave 7s infinite;
+}
+@keyframes wave{
+  0%{transform: skewX(10deg) ;}
+  50%{transform: skewX(-40deg) ;}
+  100%{transform: skewX(10deg) ;}
+}
+.r2{background-color: transparent;
+  background-image: url("circle1.png");
+  background-size: 100% 100%;
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
+  bottom: -100px;
+  left: 300px;
+  position: absolute;
+  mix-blend-mode: color-burn;
+  animation: wave 13s infinite;
+}
+.r3{background-color: transparent;
+  background-image: url("circle3.png");
+  background-size: 100% 100%;
+  border-radius: 50%;
+  height: 900px;
+  width: 500px;
+  bottom: -280px;
+  left: 800px;
+  position: absolute;
+  transform: rotate(6deg);
+  animation: wave 13s infinite;
+  mix-blend-mode: color-burn;
+
+}
+.r4{background-color: transparent;
+  background-image: url("circle4.png");
+  background-size: 100% 100%;
+  border-radius: 50%;
+  height: 800px;
+  width: 1500px;
+  bottom: -200px;
+  left: 600px;
+  position: absolute;
+  animation: wave 16s infinite;
+  mix-blend-mode: color-burn;
+
+}
+
+
