@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const minX = 0;
             const maxX = 2000;
 
-           let posX = humanX + X;
+            let posX = humanX + X;
             let posY = humanY + Y;
 
             
@@ -35,10 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
             posY = Math.max(minY, Math.min(maxY, posY));
 
             symbol.classList.add("symbol");
-            symbol.textContent = "*";
+            symbol.textContent = Math.random() > 0.5 ? "*" : "+";
             symbol.style.left = posX + "px";
             symbol.style.top = posY + "px";
-            symbol.style.fontSize = (Math.random() * 80 + 10) + "px";
+            symbol.style.fontSize = (Math.random() * 60 + 10) + "px";
+        
 
             document.body.appendChild(symbol);
           }
