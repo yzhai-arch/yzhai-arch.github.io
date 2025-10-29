@@ -49,7 +49,7 @@
    height: 28%;
    width: 100%;
    background: linear-gradient(black 60%, white);
-   transition: all 0.3s ease;
+   
  }
  .background1.big {
    background: linear-gradient(white 60%, black);
@@ -69,7 +69,7 @@
    height: 100%;
    width: 100%;
    background-color: white;
-   transition: all 0.3s ease;
+   
  }
  .background0.big {
    background-color: black;
