@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>CSS Composition Template</title>
-    <*link rel="stylesheet"
-    href="ra.css">
-       <style>
-        body {
+    <title>Tree or Chaos</title>
+    <style>
+      body {
         margin: 0;
         overflow: hidden;
         background-color: white;
@@ -17,22 +15,14 @@
         font-family: sans-serif;
       }
 
-      canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-      }
-
       .tree {
         position: absolute;
         color: lightgray;
-        font-weight: ;
         z-index: 9;
         mix-blend-mode: multiply;
-       
       }
-      .human{
+
+      .human {
         background-color: transparent;
         background-image: url("human.png");
         background-size: cover;
@@ -41,18 +31,9 @@
         width: 800px;
         z-index: 10;
         left: 20%;
-
-        
       }
-      .background1{
-        z-index: 1;
-        position: absolute;
-        height: 28%;
-        width: 100%;
-        background: linear-gradient( black 60%, white);
 
-      }
-  .human0{
+      .human0 {
         background-color: black;
         background-image: url("human1.png");
         background-size: cover;
@@ -64,113 +45,172 @@
         left: 28%;
         top: 390px;
         filter: blur(10px);
-        background: radial-gradient(at bottom left, black 20%,transparent 50%);
+        background: radial-gradient(at bottom left, black 20%, transparent 50%);
         mix-blend-mode: multiply;
         opacity: 0.9;
-
       }
 
-      
+      .background1 {
+        z-index: 2;
+        position: absolute;
+        height: 28%;
+        width: 100%;
+        background: linear-gradient(black 60%, white);
+        transition: all 0.3s ease;
+      }
+      .background1.big {
+        background: linear-gradient(white 60%, black);
+      }
+
+      .blackt {
+        position: absolute;
+        color: white;
+        font-family: "Times New Roman";
+        mix-blend-mode: screen;
+        z-index: 9;
+      }
+
+      .background0 {
+        z-index: 1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        transition: all 0.3s ease;
+      }
+      .background0.big {
+        background-color: black;
+      }
+
+      .head {
+        background-color: transparent;
+        background-image: url("head.png");
+        background-size: cover;
+        border: none;
+        position: fixed;
+        height: 800px;
+        width: 800px;
+        z-index: 11;
+        left: 20%;
+        
+      }
+
+      .head:hover {
+        filter: blur(3px);
+        transform: scale(0.98);
+        transition: all 0.1s ease;
+      }
+       .head.big {
+        background-color: transparent;
+        background-image: url("head.png");
+        background-size: cover;
+        border: none;
+        position: fixed;
+        height: 800px;
+        width: 800px;
+        z-index: 11;
+        left: 20%;
+        mix-blend-mode: multiply;
+        opacity: 0.6;
+      }
     </style>
   </head>
   <body>
-     <canvas id="trail"></canvas>
-
-    
-    
-    <div class="tree"></div>
     <div class="human"></div>
-    <div class="human1"></div>
+    <div class="human0"></div>
     <div class="background1"></div>
-    <div class="background2"></div>
- 
+    <div class="background0"></div>
+    <button class="head"></button>
 
-   <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const body = document.body;
-  const canvas = document.getElementById("trail");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+    <script>
+      const body = document.body;
+      const background1 = document.querySelector(".background1");
+      const background0 = document.querySelector(".background0");
+      const head = document.querySelector(".head");
 
-  const thetruth = Math.floor(Math.random() * 2) + 1; 
-  // 随机为 1 或 2
+      let thetruth = 1; // 初始状态：森林世界
+      let numTrees = Math.floor(Math.random() * 30) * 30 + 200;
 
-  // 打印当前状态方便测试
-  console.log("thetruth =", thetruth);
+      // 🌳 世界生成函数
+      function generateWorld() {
+        // 清空旧内容
+        document.querySelectorAll(".tree, .blackt").forEach(el => el.remove());
 
-  if (thetruth === 1) {
-    // 🌳 thetruth = 1 → 生成树
-    const numTrees = Math.floor(Math.random() * 30) * 30 + 200;
+        if (thetruth === 1) {
+          // 🌲 森林模式
+          background0.classList.remove("big");
+          background1.classList.remove("big");
+          head.classList.remove("big");
 
-    for (let i = 0; i < numTrees; i++) {
-      const tree = document.createElement("div");
-      tree.classList.add("tree");
-      tree.textContent = "森";
+          for (let i = 0; i < numTrees; i++) {
+            const tree = document.createElement("div");
+            tree.classList.add("tree");
+            tree.textContent = "森";
 
-      const x = Math.random() * window.innerWidth;
-      const minY = window.innerHeight / 4;
-      const y = minY + Math.random() * (window.innerHeight - minY);
+            const x = Math.random() * window.innerWidth;
+            const minY = window.innerHeight / 4;
+            const y = minY + Math.random() * (window.innerHeight - minY);
+            const size = -20 + (y / window.innerHeight) * 100;
 
-      // 越高越小
-      const size = -20 + (y / window.innerHeight) * 100;
+            tree.style.left = `${x}px`;
+            tree.style.top = `${y}px`;
+            tree.style.fontSize = `${size}px`;
+            tree.style.opacity = 0.3 + (y / window.innerHeight) * 0.7;
+            body.appendChild(tree);
+          }
 
-      tree.style.left = `${x}px`;
-      tree.style.top = `${y}px`;
-      tree.style.fontSize = `${size}px`;
-      body.appendChild(tree);
-    }
 
-  } else if (thetruth === 2) {
-    // 🌀 thetruth = 2 → 显示乱码黑幕
-    const blackt = document.createElement("div");
-    blackt.classList.add("blackt");
-    body.appendChild(blackt);
 
-    
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*()";
-    let text = "";
-    const lines = 40; // 行数
-    const cols = 120; // 每行字符数
 
-    for (let i = 0; i < lines; i++) {
-      let line = "";
-      for (let j = 0; j < cols; j++) {
-        line += chars[Math.floor(Math.random() * chars.length)];
+
+        } else {
+          
+          background0.classList.add("big");
+          background1.classList.add("big");
+          head.classList.add("big");
+
+          const centerX = window.innerWidth / 2;
+          const centerY = window.innerHeight / 2;
+          const chars =
+            "1234567890-=qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM[];',./！@#¥%……&*（）～·";
+
+          for (let i = 0; i < numTrees; i++) {
+            const charDiv = document.createElement("div");
+            charDiv.classList.add("blackt");
+            charDiv.textContent =
+              chars[Math.floor(Math.random() * chars.length)];
+
+            const angle = Math.random() * 2 * Math.PI;
+            const radius =
+              Math.sqrt(Math.random()) *
+              (Math.min(window.innerWidth, window.innerHeight) / 2);
+
+            const x = centerX + Math.cos(angle) * radius;
+            const y = centerY + Math.sin(angle) * radius;
+
+            charDiv.style.left = `${x}px`;
+            charDiv.style.top = `${y}px`;
+            charDiv.style.fontSize = `${8 + Math.random() * 16}px`;
+            charDiv.style.opacity = 0.5 + Math.random() * 0.5;
+            body.appendChild(charDiv);
+          }
+        }
       }
-      text += line + "\n";
-    }
 
-    blackt.textContent = text;
 
-    // 样式控制
-    blackt.style.position = "absolute";
-    blackt.style.top = "0";
-    blackt.style.left = "0";
-    blackt.style.width = "100vw";
-    blackt.style.height = "100vh";
-    blackt.style.color = "white";
-    blackt.style.backgroundColor = "black";
-    blackt.style.fontFamily = "monospace";
-    blackt.style.fontSize = "14px";
-    blackt.style.lineHeight = "1.1";
-    blackt.style.whiteSpace = "pre";
-    blackt.style.zIndex = "999";
-  }
-});
-    </script>
-    
-    
 
-    
+      //this part helpped out with gpt because i couldn't fix it
+      generateWorld();
 
       
+      head.addEventListener("click", () => {
+     
+        thetruth = Math.floor(Math.random() * 2) + 1;
+        numTrees = Math.floor(Math.random() * 30) * 30 + 200;
 
+        console.log("new thetruth =", thetruth, "numTrees =", numTrees);
+        generateWorld();
+      });
+    </script>
   </body>
 </html>
-
-
-
-
-
-
