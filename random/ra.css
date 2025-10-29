@@ -1,6 +1,5 @@
  body {
    margin: 0;
-   overflow: hidden;
    background-color: white;
    height: 100vh;
    width: 100vw;
@@ -17,11 +16,12 @@
 
  .human {
    background-color: transparent;
-   background-image: url("human.png");
+   background-image: url("human1.png");
    background-size: cover;
    position: fixed;
-   height: 800px;
-   width: 800px;
+   height: 1000px;
+   width: 1000px;
+   top: -150px;
    z-index: 10;
    left: 20%;
  }
@@ -35,8 +35,8 @@
    width: 800px;
    border-radius: 100%;
    z-index: 9;
-   left: 28%;
-   top: 390px;
+   left: 40%;
+   top: 340px;
    filter: blur(10px);
    background: radial-gradient(at bottom left, black 20%, transparent 50%);
    mix-blend-mode: multiply;
@@ -81,15 +81,16 @@
    background-size: cover;
    border: none;
    position: fixed;
-   height: 800px;
-   width: 800px;
+   height: 1000px;
+   width: 1000px;
+   top: -150px;
    z-index: 11;
    left: 20%;
    
  }
 
  .head:hover {
-   filter: blur(3px);
+   
    transform: scale(0.98);
    transition: all 0.1s ease;
  }
@@ -97,11 +98,7 @@
    background-color: transparent;
    background-image: url("head.png");
    background-size: cover;
-   border: none;
-   position: fixed;
-   height: 800px;
-   width: 800px;
-   z-index: 11;
+   
    left: 20%;
    mix-blend-mode: multiply;
    opacity: 0.6;
