@@ -1,48 +1,108 @@
-.tree{
+ body {
+   margin: 0;
+   overflow: hidden;
+   background-color: white;
+   height: 100vh;
+   width: 100vw;
+   position: relative;
+   font-family: sans-serif;
+ }
+
+ .tree {
    position: absolute;
+   color: lightgray;
+   z-index: 9;
+   mix-blend-mode: multiply;
+ }
+
+ .human {
    background-color: transparent;
-   color: gray;
-   font-size: 20px;
-}
+   background-image: url("human.png");
+   background-size: cover;
+   position: fixed;
+   height: 800px;
+   width: 800px;
+   z-index: 10;
+   left: 20%;
+ }
 
-      canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-      }
+ .human0 {
+   background-color: black;
+   background-image: url("human1.png");
+   background-size: cover;
+   position: fixed;
+   height: 300px;
+   width: 800px;
+   border-radius: 100%;
+   z-index: 9;
+   left: 28%;
+   top: 390px;
+   filter: blur(10px);
+   background: radial-gradient(at bottom left, black 20%, transparent 50%);
+   mix-blend-mode: multiply;
+   opacity: 0.9;
+ }
 
-      .tree {
-        position: absolute;
-        color: green;
-        font-weight: bold;
-        user-select: none;
-        z-index: 1;
-      }
+ .background1 {
+   z-index: 2;
+   position: absolute;
+   height: 28%;
+   width: 100%;
+   background: linear-gradient(black 60%, white);
+   transition: all 0.3s ease;
+ }
+ .background1.big {
+   background: linear-gradient(white 60%, black);
+ }
 
-      .water {
-        position: absolute;
-        color: blue;
-        font-weight: bold;
-        user-select: none;
-        opacity: 0.6;
-        z-index: 1;
-      }
+ .blackt {
+   position: absolute;
+   color: white;
+   font-family: "Times New Roman";
+   mix-blend-mode: screen;
+   z-index: 9;
+ }
 
-      .person {
-        position: absolute;
-        color: red;
-        font-weight: bold;
-        user-select: none;
-        z-index: 2;
-        transition: top 1s linear, left 1s linear;
-      }
-        body {
-        margin: 0;
-        overflow: hidden;
-        background-color: #eef7ee;
-        height: 100vh;
-        width: 100vw;
-        position: relative;
-        font-family: sans-serif;
-      }
+ .background0 {
+   z-index: 1;
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   background-color: white;
+   transition: all 0.3s ease;
+ }
+ .background0.big {
+   background-color: black;
+ }
+
+ .head {
+   background-color: transparent;
+   background-image: url("head.png");
+   background-size: cover;
+   border: none;
+   position: fixed;
+   height: 800px;
+   width: 800px;
+   z-index: 11;
+   left: 20%;
+   
+ }
+
+ .head:hover {
+   filter: blur(3px);
+   transform: scale(0.98);
+   transition: all 0.1s ease;
+ }
+  .head.big {
+   background-color: transparent;
+   background-image: url("head.png");
+   background-size: cover;
+   border: none;
+   position: fixed;
+   height: 800px;
+   width: 800px;
+   z-index: 11;
+   left: 20%;
+   mix-blend-mode: multiply;
+   opacity: 0.6;
+ }
