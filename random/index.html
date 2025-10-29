@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CSS Composition Template</title>
+    <*link rel="stylesheet"
+    href="ra.css">
+       <style>
+        body {
+        margin: 0;
+        overflow: hidden;
+        background-color: white;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        font-family: sans-serif;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+      .tree {
+        position: absolute;
+        color: lightgray;
+        font-weight: ;
+        z-index: 9;
+        mix-blend-mode: multiply;
+       
+      }
+      .human{
+        background-color: transparent;
+        background-image: url("human.png");
+        background-size: cover;
+        position: fixed;
+        height: 800px;
+        width: 800px;
+        z-index: 10;
+        left: 20%;
+
+        
+      }
+      .background1{
+        z-index: 1;
+        position: absolute;
+        height: 28%;
+        width: 100%;
+        background: linear-gradient( black 60%, white);
+
+      }
+  .human0{
+        background-color: black;
+        background-image: url("human1.png");
+        background-size: cover;
+        position: fixed;
+        height: 300px;
+        width: 800px;
+        border-radius: 100%;
+        z-index: 9;
+        left: 28%;
+        top: 390px;
+        filter: blur(10px);
+        background: radial-gradient(at bottom left, black 20%,transparent 50%);
+        mix-blend-mode: multiply;
+        opacity: 0.9;
+
+      }
+
+      
+    </style>
+  </head>
+  <body>
+     <canvas id="trail"></canvas>
+
+    
+    
+    <div class="tree"></div>
+    <div class="human"></div>
+    <div class="human1"></div>
+    <div class="background1"></div>
+    <div class="background2"></div>
+ 
+
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body;
+  const canvas = document.getElementById("trail");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const thetruth = Math.floor(Math.random() * 2) + 1; 
+  // 随机为 1 或 2
+
+  // 打印当前状态方便测试
+  console.log("thetruth =", thetruth);
+
+  if (thetruth === 1) {
+    // 🌳 thetruth = 1 → 生成树
+    const numTrees = Math.floor(Math.random() * 30) * 30 + 200;
+
+    for (let i = 0; i < numTrees; i++) {
+      const tree = document.createElement("div");
+      tree.classList.add("tree");
+      tree.textContent = "森";
+
+      const x = Math.random() * window.innerWidth;
+      const minY = window.innerHeight / 4;
+      const y = minY + Math.random() * (window.innerHeight - minY);
+
+      // 越高越小
+      const size = -20 + (y / window.innerHeight) * 100;
+
+      tree.style.left = `${x}px`;
+      tree.style.top = `${y}px`;
+      tree.style.fontSize = `${size}px`;
+      body.appendChild(tree);
+    }
+
+  } else if (thetruth === 2) {
+    // 🌀 thetruth = 2 → 显示乱码黑幕
+    const blackt = document.createElement("div");
+    blackt.classList.add("blackt");
+    body.appendChild(blackt);
+
+    
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*()";
+    let text = "";
+    const lines = 40; // 行数
+    const cols = 120; // 每行字符数
+
+    for (let i = 0; i < lines; i++) {
+      let line = "";
+      for (let j = 0; j < cols; j++) {
+        line += chars[Math.floor(Math.random() * chars.length)];
+      }
+      text += line + "\n";
+    }
+
+    blackt.textContent = text;
+
+    // 样式控制
+    blackt.style.position = "absolute";
+    blackt.style.top = "0";
+    blackt.style.left = "0";
+    blackt.style.width = "100vw";
+    blackt.style.height = "100vh";
+    blackt.style.color = "white";
+    blackt.style.backgroundColor = "black";
+    blackt.style.fontFamily = "monospace";
+    blackt.style.fontSize = "14px";
+    blackt.style.lineHeight = "1.1";
+    blackt.style.whiteSpace = "pre";
+    blackt.style.zIndex = "999";
+  }
+});
+    </script>
+    
+    
+
+    
+
+      
+
+  </body>
+</html>
+
+
+
+
+
+

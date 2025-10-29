@@ -1,0 +1,48 @@
+.tree{
+   position: absolute;
+   background-color: transparent;
+   color: gray;
+   font-size: 20px;
+}
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+      .tree {
+        position: absolute;
+        color: green;
+        font-weight: bold;
+        user-select: none;
+        z-index: 1;
+      }
+
+      .water {
+        position: absolute;
+        color: blue;
+        font-weight: bold;
+        user-select: none;
+        opacity: 0.6;
+        z-index: 1;
+      }
+
+      .person {
+        position: absolute;
+        color: red;
+        font-weight: bold;
+        user-select: none;
+        z-index: 2;
+        transition: top 1s linear, left 1s linear;
+      }
+        body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #eef7ee;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        font-family: sans-serif;
+      }
