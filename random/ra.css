@@ -12,6 +12,7 @@
    color: lightgray;
    z-index: 9;
    mix-blend-mode: multiply;
+   transition: all 0.6s ease;
  }
 
  .human {
@@ -24,11 +25,23 @@
    top: -150px;
    z-index: 10;
    left: 20%;
+   transition: all 0.6s ease;
+ }
+  .human.big {
+   background-color: transparent;
+   background-image: url("human.png");
+   background-size: cover;
+   position: fixed;
+   height: 1000px;
+   width: 1000px;
+   top: -150px;
+   z-index: 10;
+   left: 20%;
  }
 
  .human0 {
    background-color: black;
-   background-image: url("human1.png");
+   background-image: url("human.png");
    background-size: cover;
    position: fixed;
    height: 300px;
@@ -41,6 +54,7 @@
    background: radial-gradient(at bottom left, black 20%, transparent 50%);
    mix-blend-mode: multiply;
    opacity: 0.9;
+   transition: all 0.6s ease;
  }
 
  .background1 {
@@ -49,6 +63,7 @@
    height: 28%;
    width: 100%;
    background: linear-gradient(black 60%, white);
+   transition: all 0.6s ease;
    
  }
  .background1.big {
@@ -61,6 +76,7 @@
    font-family: "Times New Roman";
    mix-blend-mode: screen;
    z-index: 9;
+   transition: all 0.6s ease;
  }
 
  .background0 {
@@ -69,6 +85,7 @@
    height: 100%;
    width: 100%;
    background-color: white;
+   transition: all 0.6s ease;
    
  }
  .background0.big {
@@ -86,7 +103,7 @@
    top: -150px;
    z-index: 11;
    left: 20%;
-   
+   transition: all 0.6s ease;
  }
 
  .head:hover {

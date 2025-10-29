@@ -2,20 +2,22 @@ const body = document.body;
 const background1 = document.querySelector(".background1");
 const background0 = document.querySelector(".background0");
 const head = document.querySelector(".head");
+const human = document.querySelector(".human");
 
 let thetruth = 1; 
-let numTrees = Math.floor(Math.random() * 30) * 30 + 200;
+let numTrees = Math.floor((Math.random() * 30) + 20)*30;
 
      
 function generateWorld() {
 
-document.querySelectorAll(".tree, .blackt").forEach(el => el.remove());
 
+
+document.querySelectorAll(".tree, .blackt").forEach(el => el.remove());
 if (thetruth === 1) {
-  
   background0.classList.remove("big");
   background1.classList.remove("big");
   head.classList.remove("big");
+  human.classList.remove("big");
 
   for (let i = 0; i < numTrees; i++) {
     const tree = document.createElement("div");
@@ -43,13 +45,14 @@ if (thetruth === 1) {
   background0.classList.add("big");
   background1.classList.add("big");
   head.classList.add("big");
+  human.classList.add("big");
 
 
 
   const centerX = window.innerWidth / 2;
   const centerY = window.innerHeight / 2;
   const chars =
-    "1234567890-=qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM[];',./！@#¥%……&*（）～·";
+    "1234567890-=qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM[];',./！@#¥%……&*（）～·?";
 
   for (let i = 0; i < numTrees; i++) {
     const charDiv = document.createElement("div");
@@ -57,13 +60,18 @@ if (thetruth === 1) {
     charDiv.textContent =
       chars[Math.floor(Math.random() * chars.length)];
 
-const angle = Math.random() * 2 * Math.PI;
+
+
+      
+
+const angle = Math.random() * 3 * Math.PI;
     const radius =
       Math.sqrt(Math.random()) *
       (Math.min(window.innerWidth, window.innerHeight) / 2);
 
     const x = centerX + Math.cos(angle) * radius;
     const y = centerY + Math.sin(angle) * radius;
+
 
     charDiv.style.left = `${x}px`;
     charDiv.style.top = `${y}px`;
