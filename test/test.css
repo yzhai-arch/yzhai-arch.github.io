@@ -1,0 +1,95 @@
+.sun{
+  background-color: aliceblue;
+  background1: radial-gradient(circle, gray 10%, gray 50%, transparent 70%);
+  position:fixed;
+  z-index: 20;
+  height: 300px;
+  width: 300px;
+  top:400px;
+  left:1000px;
+  transform: translate(-50%, -50%);
+  border-radius:50%;
+  animation: sunlight 2s infinite;
+}
+@keyframes sunlight{
+  0%{
+    background-color: ;
+    background: radial-gradient(circle, royalblue 0%, transparent 70%);
+    opacity: 50%;
+
+  }
+  50%{
+    background-color: gray;
+    background: radial-gradient(circle,royalblue 0%, transparent 70%);
+    opacity: 100%;
+  }
+  100%{
+    background-color: aliceblue;
+    background: radial-gradient(circle,royalblue 0%, transparent 70%);
+    opacity: 50%;
+  }
+}
+
+.sun2{
+  background-color: gray;
+  background1: radial-gradient(circle, gray 10%, gray 50%, transparent 70%);
+  position:fixed;
+  z-index: 19;
+  height: 600px;
+  width: 600px;
+  top:400px;
+  left:1000px;
+  transform: translate(-50%, -50%);
+  border-radius:50%;
+  animation: sunlight1 2s ease-in-out infinite;
+}
+@keyframes sunlight1{
+  0%{
+    background-color: gray;
+    background: radial-gradient(circle, gray 0%, gray 50%, transparent 70%);
+    opacity: 100%;
+
+  }
+  50%{
+    background-color: gray;
+    background: radial-gradient(circle,gray 0%, gray 50%, transparent 70%);
+    opacity: 50%;
+  }
+  100%{
+    background-color: gray;
+    background: radial-gradient(circle,gray 0%, gray 50%,transparent 70%);
+    opacity: 100%;}
+}
+
+.sun3{
+  background-color: gray;
+  background1: radial-gradient(circle, gray 10%, gray 50%, transparent 70%);
+  position:fixed;
+  z-index: 18;
+  height: 800px;
+  width: 800px;
+  top:400px;
+  left:1000px;
+  transform: translate(-50%, -50%);
+  border-radius:50%;
+  animation: sunlight2 2s ease-in-out infinite;
+}
+@keyframes sunlight2{
+  0%{
+    background-color: orange;
+    background: radial-gradient(circle, orange 0%, orange 50%, transparent 70%);
+    opacity: 50%;
+
+  }
+  50%{
+    background-color: gray;
+    background: radial-gradient(circle,orange 0%, orange 50%, transparent 70%);
+    opacity: 100%;
+  }
+  100%{
+    background-color: orange;
+    background: radial-gradient(circle,orange 0%, orange 50%,transparent 70%);
+    opacity: 50%;}
+
+
+}
