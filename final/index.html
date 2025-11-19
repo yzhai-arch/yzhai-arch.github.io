@@ -41,7 +41,7 @@ let t = 0;
 let humanImg; // 全局变量存贴图
 
 function preload() {
-  humanImg = loadImage('your_image_url_or_path.jpg'); 
+  humanImg = loadImage('https://krikey-ai.ghost.io/content/images/2025/06/GIF-Maker-Halloween-GIF-Transparent.GIF'); 
 }
 
 
@@ -175,6 +175,7 @@ directionalLight(r, g, b, 0.5, 1, -1);
 //human
  fill(255, 0, 0);
   translate(100,200, 0);
+  texture(humanImg);
   rotateY(90)
   plane(500,1300);
   pop();
