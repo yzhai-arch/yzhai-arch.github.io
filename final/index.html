@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CSS Composition Template</title>
+     <style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;   /* 让它永远在最下面 */
+  display: block;
+}
+</style> 
+    
+  </head>
+  <body>
+
+
+
+    
+  <!-- Load the p5.js library -->
+  <script 
+   src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+  <!-- Load your own sketch file -->
+  <script>
+
+
+
+
+let camSide, camBottom;
+let t = 0;
+let humanImg; // 全局变量存贴图
+
+function preload() {
+  humanImg = loadImage('your_image_url_or_path.jpg'); 
+}
+
+
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  angleMode(DEGREES);
+  pixelDensity(1);
+
+  camSide = createCamera();
+  camBottom = createCamera();
+
+}
+
+
+function drawFiveSidedBox(x, y, z, w, h, d) {
+  push();
+  translate(x, y, z);
+  ambientMaterial(200); // 保持原来的材质
+  stroke(255);
+  strokeWeight(1);
+
+  // 底面
+  beginShape();
+  vertex(-w/2, h/2, -d/2);
+  vertex(w/2, h/2, -d/2);
+  vertex(w/2, h/2, d/2);
+  vertex(-w/2, h/2, d/2);
+  endShape(CLOSE);
+
+  // 前面
+  beginShape();
+  vertex(-w/2, h/2, -d/2);
+  vertex(w/2, h/2, -d/2);
+  vertex(w/2, -h/2, -d/2);
+  vertex(-w/2, -h/2, -d/2);
+  endShape(CLOSE);
+
+  // 后面
+  beginShape();
+  vertex(-w/2, h/2, d/2);
+  vertex(w/2, h/2, d/2);
+  vertex(w/2, -h/2, d/2);
+  vertex(-w/2, -h/2, d/2);
+  endShape(CLOSE);
+
+  // 左面
+  beginShape();
+  vertex(-w/2, h/2, -d/2);
+  vertex(-w/2, h/2, d/2);
+  vertex(-w/2, -h/2, d/2);
+  vertex(-w/2, -h/2, -d/2);
+  endShape(CLOSE);
+
+  // 右面
+  beginShape();
+  vertex(w/2, h/2, -d/2);
+  vertex(w/2, h/2, d/2);
+  vertex(w/2, -h/2, d/2);
+  vertex(w/2, -h/2, -d/2);
+  endShape(CLOSE);
+
+  pop();
+}
+
+
+function draw() {
+  const gl = this._renderer.GL;
+  gl.enable(gl.SCISSOR_TEST);
+
+  // -------- 左侧视图 --------
+  gl.scissor(0, 0, width / 2, height);
+  gl.viewport(0, 0, width / 2, height);
+  background(230);
+
+  let aspectLeft = (width / 2) / height;
+  camSide.perspective(60, aspectLeft, 1, 5000);
+
+  //left cam
+  setCamera(camSide);
+  camSide.setPosition(800, -300, 0);
+  camSide.lookAt(0, -200, 0);
+  drawScene();
+
+  // -------- 右侧视图 --------
+  gl.scissor(width / 2, 0, width / 2, height);
+  gl.viewport(width / 2, 0, width / 2, height);
+  background(200);
+
+  let aspectRight = (width / 2) / height;
+  camBottom.perspective(60, aspectRight, 1, 5000);
+//right cam
+  setCamera(camBottom);
+  camBottom.setPosition(100, 0, 0);
+  camBottom.lookAt(800, -200, 0);
+  drawScene();
+
+  gl.disable(gl.SCISSOR_TEST);
+}
+
+
+
+
+
+function drawScene() {
+  orbitControl(4, 4, 0.5, 9999, 9999);
+  ambientLight(0);
+let r = noise(t + 20) * 255;
+  let g = noise(t + 200) * 255;
+  let b = noise(t + 180) * 255;
+
+directionalLight(r, g, b, 0.5, 1, -1);
+   t += 0.005; 
+
+  push();
+  orbitControl();
+  ambientLight(150);
+  directionalLight(255, 255, 255, 0.5, 1, -1);
+//cage
+  //fill(120, 120, 200);
+  push();
+  noFill();           
+  stroke(255);        
+  strokeWeight(2);
+  translate(-100, 0, 0);
+  box(250);
+  pop();
+//human?
+  fill(255, 0, 0);
+  translate(900, -300, 0);
+  
+//human
+ fill(255, 0, 0);
+  translate(100,200, 0);
+  rotateY(90)
+  plane(500,1300);
+  pop();
+//room
+  push();
+drawFiveSidedBox(-100, -300, 0, 6000, 2000, 1800);
+  pop();
+}
+  </script>
+</body>
+</html>
