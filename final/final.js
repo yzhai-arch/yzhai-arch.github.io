@@ -72,7 +72,7 @@ const triangleBox = document.createElement("div");
 triangleBox.style.position = "fixed";
 triangleBox.style.top = "60px";
 triangleBox.style.left = "50%";
-triangleBox.style.opacity = "0";
+triangleBox.style.opacity = "1";
 triangleBox.style.transform = "translateX(-50%)";
 triangleBox.style.zIndex = "3000";
 triangleBox.style.color = "white";
@@ -86,7 +86,7 @@ const triangleBarContainer = document.createElement("div");
 triangleBarContainer.style.position = "fixed";
 triangleBarContainer.style.top = "80px";
 triangleBarContainer.style.left = "50%";
-triangleBarContainer.style.opacity = "0";
+triangleBarContainer.style.opacity = "1";
 triangleBarContainer.style.transform = "translateX(-50%)";
 triangleBarContainer.style.width = "500px";
 triangleBarContainer.style.height = "8px";
@@ -99,7 +99,7 @@ document.body.appendChild(triangleBarContainer);
 const triangleBarFill = document.createElement("div");
 triangleBarFill.style.height = "100%";
 triangleBarFill.style.width = "100%";
-triangleBarFill.style.opacity = "0";
+triangleBarFill.style.opacity = "1";
 triangleBarFill.style.background = "white";
 triangleBarFill.style.borderRadius = "10px";
 triangleBarContainer.appendChild(triangleBarFill);
@@ -112,7 +112,7 @@ humanBox.style.left = "50%";
 humanBox.style.transform = "translateX(-50%)";
 humanBox.style.zIndex = "3000";
 humanBox.style.color = "white";
-humanBox.style.opacity = "0";
+humanBox.style.opacity = "1";
 humanBox.style.fontFamily = "Times New Roman";
 humanBox.style.fontSize = "16px";
 humanBox.textContent = "Human: " + humanLife.toFixed(1);
@@ -130,15 +130,15 @@ humanBarContainer.style.border = "1px solid white";
 humanBarContainer.style.borderRadius = "10px";
 humanBarContainer.style.zIndex = "2999";
 humanBarContainer.style.display = "none";
-humanBarContainer.style.opacity = "0";
+humanBarContainer.style.opacity = "01";
 document.body.appendChild(humanBarContainer);
 
 const humanBarFill = document.createElement("div");
 humanBarFill.style.height = "100%";
-humanBarFill.style.width = "0%";
+humanBarFill.style.width = "1%";
 humanBarFill.style.background = "yellow";
 humanBarFill.style.borderRadius = "10px";
-humanBarFill.style.opacity = "0";
+humanBarFill.style.opacity = "1";
 humanBarContainer.appendChild(humanBarFill);
 
 
@@ -566,7 +566,7 @@ updateStatus();
       activeFlyChars = activeFlyChars.filter(o => o !== obj);
 
        monsterLife += 0.5;
-       humanLife -= 1;
+       //humanLife -= 1;
   updateStatus();
       return;
     }
@@ -633,7 +633,7 @@ function spawnRainCharDown() {
   // 固定定位：从屏幕上方某个随机 x 掉下来
   el.style.position = "fixed";
   el.style.top = "-40px";
-  el.style.left = Math.random() * 100 + "vw";
+  el.style.left = Math.random() * window.innerWidth + "px";
   el.style.pointerEvents = "none";
 
   document.body.appendChild(el);
@@ -690,16 +690,37 @@ function spawnRainCharDown() {
 
 
 window.addEventListener("keydown", (e) => {
-
-    currentHumanIndex = Math.floor(Math.random() * 3);
-    humanBounce = 0.3;  
+  currentHumanIndex = Math.floor(Math.random() * 3);
+  humanBounce = 0.3;
 
   const key = e.key;
-
-  // 只处理单个字符的键（忽略 Shift, Enter, Arrow 等）
   if (!key || key.length !== 1) return;
 
-  // 先处理：你原来从下往上飞的字
+  // ⭐ 先判断雨字
+  const rainTarget = rainChars.find(obj =>
+    !obj.resolved &&
+    !obj.caught &&
+    obj.char.toLowerCase() === key.toLowerCase()
+  );
+
+ if (rainTarget) {
+  rainTarget.caught = true;
+
+  // 🔥 从 DOM 删除
+  rainTarget.el.remove();
+
+  // 🔥 从数组移除
+  rainChars = rainChars.filter(o => o !== rainTarget);
+
+  // 🔥 加血逻辑
+  humanLife += 1;
+  triangleLife += 1;
+
+  updateStatus();
+  return; // 重要：阻止后续飞字判断
+}
+
+  // ⭐ 再判断飞字
   const target = activeFlyChars.find(obj =>
     !obj.resolved &&
     !obj.caught &&
@@ -709,40 +730,18 @@ window.addEventListener("keydown", (e) => {
   if (target) {
     target.caught = true;
     monsterLife -= 1;
-    humanLife += 0.5;
+    humanLife += 0.3;
     updateStatus();
+    return;
   }
 
-  // 再处理：从上往下的“坏字雨”
-  const rainTarget = rainChars.find(obj =>
-    !obj.resolved &&
-    !obj.caught &&
-    obj.char.toLowerCase() === key.toLowerCase()
-  );
-
-  if (rainTarget) {
-    rainTarget.caught = true;      
-    humanLife += 1;
-    triangleLife += 1;
-    updateStatus();
-  }
-  if (!target && !rainTarget) {
-
-    // 玩家按错 → Triangle +1（你原本要求）
-    triangleLife += 0.5;
-     mistakeCount++;
-
-
-    // 玩家按错 → Human -1
-    humanLife -= 1;
-
-    // 让triangle闪红
-    triangleFlash = 1;
-
-    updateStatus();
-}
+  // ❌ 两边都没 hit
+  triangleLife += 0.5;
+  mistakeCount++;
+  humanLife -= 1;
+  triangleFlash = 1;
+  updateStatus();
 });
-
 
 function showRainWarning() {
   const warn = document.getElementById("rainWarning");
