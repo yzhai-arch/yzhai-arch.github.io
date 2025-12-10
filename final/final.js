@@ -72,6 +72,7 @@ const triangleBox = document.createElement("div");
 triangleBox.style.position = "fixed";
 triangleBox.style.top = "60px";
 triangleBox.style.left = "50%";
+triangleBox.style.opacity = "0";
 triangleBox.style.transform = "translateX(-50%)";
 triangleBox.style.zIndex = "3000";
 triangleBox.style.color = "white";
@@ -85,6 +86,7 @@ const triangleBarContainer = document.createElement("div");
 triangleBarContainer.style.position = "fixed";
 triangleBarContainer.style.top = "80px";
 triangleBarContainer.style.left = "50%";
+triangleBarContainer.style.opacity = "0";
 triangleBarContainer.style.transform = "translateX(-50%)";
 triangleBarContainer.style.width = "500px";
 triangleBarContainer.style.height = "8px";
@@ -97,6 +99,7 @@ document.body.appendChild(triangleBarContainer);
 const triangleBarFill = document.createElement("div");
 triangleBarFill.style.height = "100%";
 triangleBarFill.style.width = "100%";
+triangleBarFill.style.opacity = "0";
 triangleBarFill.style.background = "white";
 triangleBarFill.style.borderRadius = "10px";
 triangleBarContainer.appendChild(triangleBarFill);
@@ -109,6 +112,7 @@ humanBox.style.left = "50%";
 humanBox.style.transform = "translateX(-50%)";
 humanBox.style.zIndex = "3000";
 humanBox.style.color = "white";
+humanBox.style.opacity = "0";
 humanBox.style.fontFamily = "Times New Roman";
 humanBox.style.fontSize = "16px";
 humanBox.textContent = "Human: " + humanLife.toFixed(1);
@@ -126,6 +130,7 @@ humanBarContainer.style.border = "1px solid white";
 humanBarContainer.style.borderRadius = "10px";
 humanBarContainer.style.zIndex = "2999";
 humanBarContainer.style.display = "none";
+humanBarContainer.style.opacity = "0";
 document.body.appendChild(humanBarContainer);
 
 const humanBarFill = document.createElement("div");
@@ -133,6 +138,7 @@ humanBarFill.style.height = "100%";
 humanBarFill.style.width = "0%";
 humanBarFill.style.background = "yellow";
 humanBarFill.style.borderRadius = "10px";
+humanBarFill.style.opacity = "0";
 humanBarContainer.appendChild(humanBarFill);
 
 
@@ -146,7 +152,7 @@ superBox.style.zIndex = "3000";
 superBox.style.color = "white";
 superBox.style.fontFamily = "Times New Roman";
 superBox.style.fontSize = "18px";
-superBox.textContent = "Super: 0";
+superBox.textContent = "Our Life: 0";
 superBox.style.display = "none";
 document.body.appendChild(superBox);
 
@@ -178,7 +184,7 @@ function updateStatus() {
    let superValue = triangleLife + humanLife;
   superValue = Math.max(superValue, 0);
 
-  superBox.textContent = "Super: " + superValue.toFixed(1);
+  superBox.textContent = "Our Life: " + superValue.toFixed(1);
 
   // 假设最大值 200（monster100 + human100）
   let percent = Math.min(superValue / 200 * 100, 100);
@@ -571,7 +577,7 @@ updateStatus();
   animate();
 
   // 每隔 400ms 生成一个新字
-  setTimeout(spawnFlyChar, 300);
+  setTimeout(spawnFlyChar, 400);
 }
 
 
@@ -645,7 +651,7 @@ function spawnRainCharDown() {
   rainChars.push(obj);
 
   const startTime = performance.now();
-  const duration = 3000;              // 3 秒飞完整个屏幕
+  const duration = 5000;              // 3 秒飞完整个屏幕
   const endY = window.innerHeight+40; // 掉出屏幕
 
   function step(now) {
@@ -821,7 +827,7 @@ let playDialogue = [
   "If you miss any letter then the colorful sky thing will gain life!! VERY BAD!!!",
   "If you missclick any letter then I...",
   "..no, WE will get hurt.",
-  "If there is anything you forgot, click LEFT TAB to check",
+  "Here, reaching 0 dosen't means the end for me and you, sometimes the story ends half way when sometimes the story never ends",
   "Now, prepare yourself...",
   "You'd better kick the ass out of that sky or the consequences are those you can't withstand."
 ];
