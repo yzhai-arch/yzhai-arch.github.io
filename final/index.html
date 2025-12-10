@@ -4,462 +4,120 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>CSS Composition Template</title>
-     <style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  canvas {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 0 !important;   /* 让它永远在最下面 */
-  display: block;
-}
-.inputBox {
-  position: absolute;
-  top: 20px;
-  left: 20%;
-  width: 240px;
-  padding: 8px 12px;
-  font-size: 30px;
-  border: 0px solid white;
-  background: transparent;
-  color: white;
-  outline: none;
-  border-radius: 8px;
-  z-index: 900; 
-  transform: translate(-25%,0);
-  font-family: 'Times New Roman', Times, serif;
-}
-.inputBox::placeholder{
-  color: white;
-  opacity: 1;
-}s
-.inputBox1 {
-  position: absolute;
-  top: 20px;
-  left:85%;
-  width: 240px;
-  padding: 8px 12px;
-  font-size: 30px;
-  border: 0px solid white;
-  background: transparent;
-  color: white;
-  outline: none;
-  border-radius: 8px;
-  z-index: 900; 
-  transform: translate(-85%,0);
-  font-family: 'Times New Roman', Times, serif;
-}
-.inputBox1::placeholder{
-  color: white;
-  opacity: 1;
-}
-.middle{
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 1px;
-  height: 100vh;
-  background-color: aliceblue;
-  transform: translate(-50%,0);
-  z-index: 800;
-}
-.start{
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  background-color: black;
-  z-index: 1000;
-  font-family: 'Times New Roman', serif;
-  font-size: 48px;
-  color: rgb(255, 255, 255);
-
-}
-  .startBtn{
-    padding: 20px 40px;
-    font-size: 32px;
-    cursor: pointer;
-    border: none;
-    border-radius: 12px;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-  }
-</style> 
+     <link rel="stylesheet"
+    href="final.css">
     
   </head>
   <body>
+    
     <div class = "middle"></div>
     <div class="start" id="startScreen">
-      <button id="startBtn" class="startBtn">Press to Start</button>
+      <button id="startBtn" class="startBtn"> </button>
+      <div class="startword">Press anywhere to start...</div>
+      
     </div>
+<div class="thebackgroundcolor"></div>
+
+<div class="ageback">
+    <div class="agehold" id="agehold">
+     <textarea type="text" class ="agetext" maxlength="100" placeholder="enter your name"></textarea>
+     <button id="nameBtn" class="nameBtn">Yes this is my name</button>
+   </div>
+</div>
 
 
 
+<div id="playScreen" class="playScreen">
+  <div id="playText" class="playText"></div>
+ 
+  <button id="playNextBtn" class="playNextBtn">Next</button>
+</div>
 
 
+
+<button id="flywordstart" class="wordflyBtn" style="margin-top:20px;">
+  Click ME to Let the words fly
+</button>
+
+<div class="rainbow"></div>
+
+<div id="input"></div>
+<div id="input1"></div>
+<div id="flyContainer"></div>
+<div id="dialog"></div>
+<div id="rainWarning">
+  🌧️ Rain is coming...
+</div>
+
+
+<div id="lifeSplitPopup" class="lifeSplitPopup">
+  <img src="badman.png" class="lifeSplitImg">
+  <div class="lifeSplitText">She did something to keep the game running</div>
+</div>
+
+
+<button class="refresh"  onclick="location.reload()">Retry</button>
+<div class="die100">
+  <div class="diewords">YOU DIED</div>
+  <div class="diewords2">because your name is too long and it took out her energy</div>
+  
+</div>
+<div class="diedictionary">
+  <div class="dickwords">YOU FAILED</div>
+  <div class="dickwords2">your name contains something that she can't understand due to her illiteracy, thus she decided to open common application and apply for a university (definatly not a art school) to improve her language skills untill she understand what you wrote (it will take a few decades)!</div>
+</div>
+
+<div class="ko">
+  <div class="kowords">YOU WEREN'T FERTILIZED</div>
+  <div class="kowords2">you weren't born because there were no material to form you and your owner had to fight by herself, and after thousands of years of war she became very fit while winning the fight.</div>
+</div>
+
+<button id="skipBtn" class="skipBtn">Skip Intro</button>
+<div class="humanmonster">
+  <div class="hmwords">YOU DIED but THEY LIVED</div>
+  <div class="hmwords2">Your owner and the sky found love in each other throughout your sacrifise in this meaningless war whether or not you are awar of why. They started hugging eachother like how monkeys hug trees...If you could know why earlier, would you change a method and try to take the throne all by yourself?  </div>
+</div>
+
+<div class="humantriangle">
+  <div class="htwords">WE WIN</div>
+  <div class="htwords2">You and your owner won and now you can finnaly live in a world of black and white and gray, but when you look into the sky, you felt something is missing... But living together is pretty nice any way</div>
+</div>
+
+<div class="trianglemonster">
+  <div class="tmwords">YOU FELL IN LOVE</div>
+  <div class="tmwords2">
+    Your owner died during the conflict but when you gazed into the sky, your heart started to beat faster and realized that you suddently envoke the egger to reproduce offspring with it... Will you give birth to little colorful triangles or give birth to little triangular sky?
+  </div>
+  </div>
+
+<div class="triangle">
+  <div class="twords">YOU WIN</div>
+  <div class="twords2">
+    Your owner and the sky failed to compete with you throughout the clash, now you are all by yourself and could reproduct by yourself for ever and slowly take over the planet... but maybe latter find youself a pet or get into another war will fill up the weird emptiness in our heart...(do I even have a heart? I think it could be my stomach, or my ass)</div>
+  </div>
+
+<div class="human">
+  <div class="twords">YOU DIED</div>
+  <div class="twords2">
+   Your owner had won the war while sacrifised you to achieve the peace in her heart, now she could do what ever she want with the emptiness HAHAHAHAHA...who will be the next to destroy? (she can't give birth and reproduct by herself it's a unique ability only you know).
+  </div>
+  </div>
+
+  <div class="monster">
+  <div class="mwords">YOU DUYS DIED</div>
+  <div class="mwords2">
+   You and your owner suck at playing the game and lost your life to a war your owner started, try to eat some fish oil to prepair yourself and your skills, or find some other ways to defend... since maybe you haven't moved around your vision using the mouse...let's try again ^-^
+  </div>
+  </div>
+  
+
+<div class="norain">There's no rain!!!</div>
     
   <!-- Load the p5.js library -->
   <script 
    src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
   <!-- Load your own sketch file -->
-  <script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let camSide, camBottom;
-let t = 0;
-let humanImg; // 全局变量存贴图
-let nebulaShader;
-let angle = 0;
-let input;
-let texts = [];
-
-
-
-function preload() {
-  humanImg = loadImage('human.png'); 
-  
-}
-
-
-function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL);
-  angleMode(DEGREES);
-  pixelDensity(1);
-
-  camSide = createCamera();
-  camBottom = createCamera();
-  input = createInput("");
-
-  input.addClass("inputBox");
-  input.attribute("placeholder", "type here...");
-  input1 = createInput("");
-  input1.addClass("inputBox1");
-  input1.attribute("placeholder", "type here...");
-   input.elt.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      texts.push(input.value()); // 保存输入内容
-      input.value("");           // 清空输入框
-    }
-  });
-
-  input1 = createInput("");
-  input1.addClass("inputBox1");
-  input1.attribute("placeholder", "type here...");
-}
-
- const startBtn = document.getElementById("startBtn");
-  const startScreen = document.getElementById("startScreen");
-  const inputBox = document.getElementById("input");
-  const inputBox1 = document.getElementById("input1");
-
-  startBtn.addEventListener("click", () => {
-    startScreen.style.display = "none"; 
-    inputBox.style.display = "block";    
-    inputBox1.style.display = "block";   
- });
-
-
-
-
-
-
-
-function cloudSphere(radius = 300, detail = 100, time = 0) {
-  push();
-  rotateY(time * 3);
-  rotateX(time * 1.5);
-
-  noStroke();
-  beginShape(TRIANGLE_STRIP);
-
-  
-  let hueShift = (time * 20) % 360;  
-
-  for (let i = 0; i <= detail; i++) {
-    let lat0 = map(i, 0, detail, -90, 90);
-    let lat1 = map(i + 1, 0, detail, -90, 90);
-
-    for (let j = 0; j <= detail * 2; j++) {
-      let lon = map(j, 0, detail * 2, -180, 180);
-
-      for (let k = 0; k < 2; k++) {
-        let lat = (k === 0) ? lat0 : lat1;
-
-        let x = radius * cos(lat) * cos(lon);
-        let y = radius * sin(lat);
-        let z = radius * cos(lat) * sin(lon);
-
-        let u = map(lon, -180, 180, 0, 3);
-        let v = map(lat, -90, 90, 0, 3);
-
-        let n =
-          0.6 * noise(u + time * 0.1, v + time * 0.15) +
-          0.3 * noise(u * 2 - time * 0.05, v * 2 + time * 0.1) +
-          0.1 * noise(u * 4 + time * 0.2, v * 4 - time * 0.1);
-
-          n += 0.35 * noise(u * 8 + time * 0.3, v * 8 - time * 0.25);
-
-        n = pow(n, 2.5);
-
-        // 随机彩色版本：使用 HSB 模式会更方便
-        let c1 = noise(u * 1.2 + time * 0.4, v * 1.3 - time * 0.3);
-let c2 = noise(u * 0.8 - time * 0.6, v * 1.5 + time * 0.2);
-let c3 = noise(u * 3.0 + time * 0.8, v * 0.7 - time * 0.4);
-let c4 = noise(u * 1.8 - time * 0.3, v * 2.3 + time * 0.6);
-let c5 = noise(u * 4.0 + time * 0.9, v * 3.0 - time * 0.7);
-let c6 = noise(u * 0.5 + time * 1.2, v * 0.5 + time * 1.3);
-
-// 更强的对比
-c1 = pow(c1, 2.0);
-c2 = pow(c2, 9.8);
-c3 = pow(c3, 10.5);
-c4 = pow(c4, 1.6);
-c5 = pow(c5, 8.0);
-c6 = pow(c6, 2.2);
-
-// 多层噪声混合 hue（更丰富更戏剧化）
-let hueVal = (
-  c1 * 120 +   // 蓝绿
-  c2 * 100 +   // 红黄
-  c3 * 220 +   // 紫色
-  c4 * 160 +   
-  c5 * 300 + 
-  c6 * 360 +   // 加强随机高频
-  time * 120   // 加快整体色相旋转
-) % 360;
-
-// 更多变化速度
-let satVal = 60 + (c2 + c5) * 90;
-let briVal = 65 + (c3 + c6) * 95;
-
-
-
-
-// 输出颜色 (HSB)
-colorMode(HSB, 360, 100, 100, 255);
-fill(hueVal, satVal, briVal, 220);
-
-        vertex(x, y, z);
-      }
-    }
-  }
-
-  endShape();
-  pop();
-
-  colorMode(RGB, 255); // 记得恢复回RGB
-}
-
-
-
-
-
-
-function drawFiveSidedBox(x, y, z, w, h, d) {
-  push();
-  translate(x, y, z);
-  ambientMaterial(200); // 保持原来的材质
-  stroke(255);
-  strokeWeight(1);
-
-  // 底面
-  beginShape();
-  vertex(-w/2, h/2, -d/2);
-  vertex(w/2, h/2, -d/2);
-  vertex(w/2, h/2, d/2);
-  vertex(-w/2, h/2, d/2);
-  endShape(CLOSE);
-
-  // 前面
-  beginShape();
-  vertex(-w/2, h/2, -d/2);
-  vertex(w/2, h/2, -d/2);
-  vertex(w/2, -h/2, -d/2);
-  vertex(-w/2, -h/2, -d/2);
-  endShape(CLOSE);
-
-  // 后面
-  beginShape();
-  vertex(-w/2, h/2, d/2);
-  vertex(w/2, h/2, d/2);
-  vertex(w/2, -h/2, d/2);
-  vertex(-w/2, -h/2, d/2);
-  endShape(CLOSE);
-
-  // 左面
-  beginShape();
-  vertex(-w/2, h/2, -d/2);
-  vertex(-w/2, h/2, d/2);
-  vertex(-w/2, -h/2, d/2);
-  vertex(-w/2, -h/2, -d/2);
-  endShape(CLOSE);
-
-  // 右面
-  beginShape();
-  vertex(w/2, h/2, -d/2);
-  vertex(w/2, h/2, d/2);
-  vertex(w/2, -h/2, d/2);
-  vertex(w/2, -h/2, -d/2);
-  endShape(CLOSE);
-
-  pop();
-}
-
-
-
-
-
-
-function draw() {
-  
-  const gl = this._renderer.GL;
-  gl.enable(gl.SCISSOR_TEST);
-
-  // -------- 左侧视图 --------
-  gl.scissor(0, 0, width / 2, height);
-  gl.viewport(0, 0, width / 2, height);
+   <script src="final.js"></script>
  
-  background(230);
-
-  let aspectLeft = (width / 2) / height;
-  camSide.perspective(60, aspectLeft, 1, 5000);
-
-  //left cam
-  setCamera(camSide);
-  camSide.setPosition(800, -300, 0);
-  camSide.lookAt(-100, -250, 0);
-  drawScene();
-
-  // -------- 右侧视图 --------
-  gl.scissor(width / 2, 0, width / 2, height);
-  gl.viewport(width / 2, 0, width / 2, height);
- 
-  background(100);
-
-  let aspectRight = (width / 2) / height;
-  camBottom.perspective(60, aspectRight, 1, 5000);
-//right cam
-  setCamera(camBottom);
-  camBottom.setPosition(100, 0, 0);
-  camBottom.lookAt(800, -200, 0);
-  drawScene();
-
-  gl.disable(gl.SCISSOR_TEST);
-}
-
-
-
-
-
-function drawScene() {
-
-  orbitControl(4, 4, 0.5, 9999, 9999);
-  
-let r = noise(t + 20) * 255;
-  let g = noise(t + 200) * 255;
-  let b = noise(t + 180) * 255;
-
-  
-
-  
-  
-  
-//cage
-  //fill(120, 120, 200);
-  push();
-  noFill();           
-  stroke(255);        
-  strokeWeight(2);
-  translate(-100, 0, 0);
-  box(250);
-  pop();
-
-  
-  push();
-translate(-100, 0, 130); // 调整 z 让文字在方块表面上方
-rotateX(-30);             // 旋转让文字可见
-rotateY(0);
-
-fill(255);
-textSize(32);
-textAlign(CENTER, CENTER);
-for (let i = 0; i < texts.length; i++) {
-  text(texts[i], 0, i * 40); // 每行间隔 40
-}
-pop();
-
-
-  //ball
-  push();
-  
-  noStroke();
-  
-  cloudSphere(4000, 30, t);
-  rotateY(200);
-  
-
-  pop();
-
-  //rain prototype
- //push();
-// noFill();
-// noStroke();
-//translate(1000, -100, 0);
-//blendMode(BLEND);
-//drawingContext.enable(drawingContext.BLEND);
-//texture(humanImg);
-//rotateY(90)
-//box(200,200);
-//pop();
-
-
-  //room
-  push();
-  ambientLight(100);
-
-directionalLight(r, r, r, 0.8, -1, -1);
-   t += 0.02; 
-drawFiveSidedBox(-100, -300, 0, 6000, 2000, 1800);
-  pop();
-
-//human
-push();
- noStroke();
-  translate(1000, -100, 0);
-  rotateY(90);
-  blendMode(BLEND);   // 正常混合模式
-  texture(humanImg);
-  plane(1500, 1300);
-  pop();
-  
-
-
-
-}
-  </script>
 </body>
 </html>

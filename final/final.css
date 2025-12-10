@@ -1,0 +1,1026 @@
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;   /* 让它永远在最下面 */
+  display: block;
+}
+.inputBox {
+  position: absolute;
+  top: 20px;
+  left: 20%;
+  width: 240px;
+  padding: 8px 12px;
+  font-size: 30px;
+  border: 0px solid white;
+  background: transparent;
+  color: transparent;
+  outline: none;
+  opacity: 0;
+  border-radius: 8px;
+  z-index: 500; 
+  transform: translate(-25%,0);
+  font-family: 'Times New Roman', Times, serif;
+}
+.inputBox::placeholder{
+  color: white;
+  opacity: 1;
+}
+.inputBox1 {
+  position: absolute;
+  opacity: 0;
+  top: 20px;
+  left:85%;
+  width: 240px;
+  padding: 8px 12px;
+  font-size: 30px;
+  border: 0px solid white;
+  background: transparent;
+  color: transparent;
+  outline: none;
+  border-radius: 8px;
+  z-index: 500; 
+  transform: translate(-85%,0);
+  font-family: 'Times New Roman', Times, serif;
+}
+.inputBox1::placeholder{
+  color: white;
+  opacity: 1;
+}
+.middle{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100vh;
+  background-color: aliceblue;
+  transform: translate(-50%,0);
+  z-index: 800;
+}
+.start{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 50%;
+  opacity: 1;
+  background-color: transparent;
+  z-index: 10000;
+  background-image: url("intro2.png");
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  transform: translate(-50%,0);
+  font-size: 48px;
+  color: transparent;
+
+}
+.startBtn{
+    padding: 60px 40px;
+    left: 20px;
+    height: 100vh;
+    width: 100vw;
+    font-size: 32px;
+    cursor: pointer;
+    border: none;
+   z-index: 10000;
+    font-family: Times New Roman;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+  }
+.startword{  
+    left: 55%;
+    top: -50%;
+    height: 500px;
+    position: relative;
+    width: 100px;
+    font-size: 32px;
+    cursor: pointer;
+    border: none;   
+    z-index: 10000;
+    font-family: Times New Roman;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+  }
+.thebackgroundcolor{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  opacity:1;
+  background-color: rgb(255, 255, 255);
+  z-index: 9998;
+  background-image: url("rainbow3.gif");
+  background-size: 100% 100%;
+  animation: changeinvert 10s infinite;
+  filter: brightness(1.8) blur(3px) contrast(130%) invert(0.1) ;
+}
+@keyframes changeinvert {
+  0%{
+    filter: brightness(1.8) blur(3px) contrast(130%) invert(0.1) ;
+  }
+  50%{
+    filter: brightness(0.1) blur(3px) contrast(130%) invert(1) ;
+  }
+  100%{
+    filter: brightness(1.8) blur(3px) contrast(130%) invert(0.1) ;
+  }
+  
+}
+  
+ .age{
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: transparent;
+  border-radius: 0px ;
+  font-family: Times New Roman;
+  font-size: 20px;
+
+  top: 200px;
+  left: 50%;
+  min-height: 40px;     /* 初始高度 */
+  resize: none;         /* 禁止用户手动拖拽 */
+  overflow: hidden;  
+  
+
+  width: 300px;
+  transform: translateX(-50%);
+  position: fixed;
+  animation: changeco 1s infinite;
+  z-index: 910;
+}
+.age:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+
+.ageback{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+   justify-content: center;
+  align-items: center;
+  background-color: black;
+  z-index: 910;
+  font-family: Times New Roman;
+  font-size: 32px;
+  opacity: 1;
+  color: rgb(255, 255, 255);
+  transition: all 2s ease;
+   display: flex;
+
+}
+.ageback.agegone{
+  display: none;
+  font-size: 0px;
+}
+
+
+
+.nameBtn{
+
+  
+    font-size: 32px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    transform: translate(0, 100px);
+    font-family: Times New Roman;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    color: rgb(255, 255, 255);
+}
+.nameBtn:hover{
+  font-size: 35px;
+  
+  animation: changethecolor 1s infinite;
+
+}
+@keyframes changethecolor {
+  0%   { color: #ff0000; }
+  10%   { color:rgb(0, 0, 0)0; }     
+  20%  { color: #00ff00; } 
+  30%  { color: #ff007b; }  
+  40%  { color: #ffff00; }
+  50%  { color: #ffa500; }   
+  60%  { color: #00d9ff; }  
+  70%  { color: #ff6f00; }  
+  80%  { color: #008aec; } 
+  90%  { color: #d900ff; }   
+  100% { color: #cac6ff; }   
+}
+
+  
+
+
+ #dialog {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  background: transparent;
+  color: white;
+  font-family: Times New Roman;
+  font-size: 24px;
+  border-radius: 8px;
+  z-index: 9999;
+  max-width: 70vw;
+  text-align: center;
+  opacity: 1;
+  transition: all 0.2s ease;
+  animation: apear 0.2s linear;
+
+}
+@keyframes apear {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+
+  
+}
+
+.agehold{
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+  
+}
+.agehold.show {
+  opacity: 1;
+  display: block;
+  
+  animation: apear 0.6s linear;
+}
+@keyframes drop {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+   opacity: 1;
+  }
+}
+
+.agetext {
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: transparent;
+  border-radius: 0px ;
+  font-family: Times New Roman;
+  font-size: 20px;
+  align-items: center;
+  min-height: 40px;
+  resize: none;
+  overflow: hidden;
+  width: 300px; 
+  position: fixed; 
+  z-index: 910;
+}
+
+
+
+
+/* 🔧 防止点击时出现 focus 边框 */
+.agetext:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.rainbow{
+  background-image: url("rainbow.gif");
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+      justify-content: center; 
+      align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 800;
+  opacity: 0;
+  filter: contrast(30%) saturate(130%) sepia(10%) blur(5px) brightness(1.2);
+
+}
+.wordflyBtn{
+    position: fixed; 
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size:40px;
+    cursor: pointer;
+    border: 1px solid black;
+    height: 80px;
+    width: 900px;
+    border-radius: 12px;
+    font-family: Times New Roman;
+    background-color:transparent;
+    border: 0px solid whitesmoke;
+    color: white;
+    transition: all 0.2s ease;
+    z-index: 1200; /* ⬅ 最高优先级，确保在最上层 */
+    
+}
+.wordflyBtn:hover{
+  transform: translateX(-50%) scale(1.2);
+  animation: changethecolor 1s infinite;
+}
+
+#flywordstart {
+  display: none;
+}
+
+#flyContainer {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 10px;         
+  height: 100vh;
+  pointer-events: none; 
+  z-index: 999;        
+}
+
+.flyChar {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  transform: translateY(0px);
+  will-change: transform, opacity;
+   text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+    font-weight: bold;
+}
+.rainChar {
+  position: absolute;
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  transform: translateY(0px);
+  will-change: transform, opacity;
+  font-weight: bold;
+       text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.9),
+    0 0 8px rgba(0, 0, 0, 0.8),
+    0 0 12px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.die100{
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background-color: transparent;
+  z-index: 10000;
+  background-image: url("die100.png");
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  
+  font-size: 48px;
+  color: transparent;
+}
+.diewords{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 100px;
+  
+}
+.diewords2{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  font-size: 20px;
+   text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+  
+}
+.refresh{
+  display: none;
+  position: absolute;
+  top: 90%;
+  right: 10%;
+ transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  z-index: 999999;
+  border: 0px solid black;
+  background-color: transparent;
+  -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+  font-size: 40px; 
+  transition: all 0.2s ease;
+}
+.refresh:hover{
+  transform:translate(-50%,-50%) scale(1.2) ;
+  animation: changethecolor 1s infinite;
+}
+
+.diedictionary{
+  display: none;
+ position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background-color: transparent;
+  z-index: 10000;
+  background-image: url("dicktionary.png");
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  
+  font-size: 48px;
+  color: transparent;
+}
+
+.dickwords{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 100px;
+  
+}
+.dickwords2{
+  position: absolute;
+  top: 60%;
+  right: 100px;
+  width: 400px;
+
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+  
+}
+.humanmonster{
+  display: none;
+ position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background-color: transparent;
+  z-index: 99999;
+  background-image: url("hm.png");
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  
+  font-size: 48px;
+  color: transparent;
+}
+
+.hmwords{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 100px;
+  
+}
+.hmwords2{
+  position: absolute;
+  top: 60%;
+  right: 100px;
+  width: 400px;
+
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+  
+}
+.ko{
+  display: none;   
+ position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background-color: transparent;
+  z-index: 10000;
+  background-image: url("ko.png");
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  
+  font-size: 48px;
+  color: transparent;
+}
+
+.kowords{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 100px;
+  
+}
+.kowords2{
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  width: 500px;
+
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  font-size: 20px;
+   text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+}
+
+.norain{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 100vw;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 30px;
+  animation: changethecolor 1s infinite;
+     text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.9),
+    0 0 8px rgba(0, 0, 0, 0.8),
+    0 0 12px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(0, 0, 0, 0.5);
+
+}
+
+.playScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1500;
+
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1), rgba(0,0,0,0.95));
+  backdrop-filter: blur(6px);
+
+  display: none;
+
+}
+.playText {
+  position: fixed;
+  bottom: 40px;             
+  left: 50%;
+  transform: translateX(-50%);
+
+  max-width: 80vw;
+  padding: 30px 40px;
+
+  font-size: 26px;
+  line-height: 1.4;
+  color: white;
+
+  border-radius: 16px;
+  border: 0px solid rgba(255,255,255,0.6);
+  background: transparent;
+  font-family: 'Times New Roman', Times, serif;
+
+  text-align: center;
+}
+
+#playNextBtn {
+  position: fixed;
+  bottom: 10px;       
+  left: 80%;
+  transform: translateX(-50%);
+
+  display: none;
+font-family: 'Times New Roman', Times, serif;
+  padding: 14px 36px;
+  font-size: 30px;
+  background: transparent;
+  border: 0px solid white;
+  color: white;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: 0.15s;
+}
+#playNextBtn:hover {
+  transform: translateX(-50%) scale(1.06);
+ 
+  animation: changethecolor 1s infinite;
+}
+
+.skipBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 10%;
+  padding: 12px 28px;
+  font-size: 30px;
+  background: transparent;
+  border: 0px solid white;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 9997;
+  display: none;
+  transition: 0.2s;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.skipBtn:hover {
+  transform: scale(1.1);
+  animation: changethecolor 1s infinite;
+}
+
+#rainWarning{
+       position: fixed;
+       top: 20%;
+       left: 50%;
+       transform: translateX(-50%);
+       font-size: 40px;
+       font-family: 'Times New Roman';
+       color: white;
+       text-shadow: 0 0 10px black;
+       z-index: 9999;
+       display: none;
+    
+}
+.lifeSplitPopup {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.lifeSplitPopup.show {
+  display: flex;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.lifeSplitImg {
+  width: 1300px;
+  height: 1000px;
+  margin-bottom: 10px;
+}
+
+.lifeSplitText {
+  position: absolute;
+  padding-top: 20%;
+  left: 50%;
+  font-size: 30px;
+  color: white;
+  z-index: 99;
+  transform: translate(-50%,0);
+  font-family: "Times New Roman";
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+
+
+
+.human{
+  display: none;
+ position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background-color: white;
+  z-index: 99999;
+  background-image: url("badman.png");
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  
+  font-size: 48px;
+  color: transparent;
+}
+
+.hwords{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 100px;
+  
+}
+.hwords2{
+  position: absolute;
+  top: 60%;
+  right: 100px;
+  width: 400px;
+
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+  
+}
+
+.humantriangle{
+  display: none;
+ position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background-color: white;
+  z-index: 99999;
+  background-image: url("th.png");
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  
+  font-size: 48px;
+  color: transparent;
+}
+
+.htwords{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 100px;
+  
+}
+.htwords2{
+  position: absolute;
+  top: 60%;
+  right: 100px;
+  width: 400px;
+
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+  
+}
+
+.trianglemonster{
+  display: none;
+ position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background-color: transparent;
+  z-index: 99999;
+  background-image: url("tm.png");
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  
+  font-size: 48px;
+  color: transparent;
+}
+
+.tmwords{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 100px;
+  
+}
+.tmwords2{
+  position: absolute;
+  top: 60%;
+  right: 100px;
+  width: 400px;
+
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+  
+}
+
+.monster{
+  display: none;
+ position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background-color: transparent;
+  z-index: 99999;
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  
+  font-size: 48px;
+  color: transparent;
+}
+
+.mwords{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 100px;
+  
+}
+.mwords2{
+  position: absolute;
+  top: 60%;
+  right: 100px;
+  width: 400px;
+
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+  
+}
+
+
+.triangle{
+  display: none;
+ position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background-color: white;
+  z-index: 99999;
+  background-image: url("t.png");
+  background-position: center center;
+  background-size: cover;
+  font-family: Times New Roman;
+  
+  font-size: 48px;
+  color: transparent;
+}
+
+.twords{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  font-size: 100px;
+  
+}
+.twords2{
+  position: absolute;
+  top: 60%;
+  right: 100px;
+  width: 400px;
+
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 1;
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.9),
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.5);
+  
+}
+
