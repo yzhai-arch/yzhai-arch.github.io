@@ -72,7 +72,7 @@ const triangleBox = document.createElement("div");
 triangleBox.style.position = "fixed";
 triangleBox.style.top = "60px";
 triangleBox.style.left = "50%";
-triangleBox.style.opacity = "1";
+triangleBox.style.opacity = "0";
 triangleBox.style.transform = "translateX(-50%)";
 triangleBox.style.zIndex = "3000";
 triangleBox.style.color = "white";
@@ -86,7 +86,7 @@ const triangleBarContainer = document.createElement("div");
 triangleBarContainer.style.position = "fixed";
 triangleBarContainer.style.top = "80px";
 triangleBarContainer.style.left = "50%";
-triangleBarContainer.style.opacity = "1";
+triangleBarContainer.style.opacity = "0";
 triangleBarContainer.style.transform = "translateX(-50%)";
 triangleBarContainer.style.width = "500px";
 triangleBarContainer.style.height = "8px";
@@ -99,7 +99,7 @@ document.body.appendChild(triangleBarContainer);
 const triangleBarFill = document.createElement("div");
 triangleBarFill.style.height = "100%";
 triangleBarFill.style.width = "100%";
-triangleBarFill.style.opacity = "1";
+triangleBarFill.style.opacity = "0";
 triangleBarFill.style.background = "white";
 triangleBarFill.style.borderRadius = "10px";
 triangleBarContainer.appendChild(triangleBarFill);
@@ -112,7 +112,7 @@ humanBox.style.left = "50%";
 humanBox.style.transform = "translateX(-50%)";
 humanBox.style.zIndex = "3000";
 humanBox.style.color = "white";
-humanBox.style.opacity = "1";
+humanBox.style.opacity = "0";
 humanBox.style.fontFamily = "Times New Roman";
 humanBox.style.fontSize = "16px";
 humanBox.textContent = "Human: " + humanLife.toFixed(1);
@@ -130,7 +130,7 @@ humanBarContainer.style.border = "1px solid white";
 humanBarContainer.style.borderRadius = "10px";
 humanBarContainer.style.zIndex = "2999";
 humanBarContainer.style.display = "none";
-humanBarContainer.style.opacity = "01";
+humanBarContainer.style.opacity = "0";
 document.body.appendChild(humanBarContainer);
 
 const humanBarFill = document.createElement("div");
@@ -138,7 +138,7 @@ humanBarFill.style.height = "100%";
 humanBarFill.style.width = "1%";
 humanBarFill.style.background = "yellow";
 humanBarFill.style.borderRadius = "10px";
-humanBarFill.style.opacity = "1";
+humanBarFill.style.opacity = "0";
 humanBarContainer.appendChild(humanBarFill);
 
 
@@ -493,7 +493,7 @@ superBarContainer.style.display = "block";
    if (!flying) {
     rainStarted = true;
     setTimeout(showRainWarning, 17000);
-    setTimeout(spawnRainGroup, 20000); // 20 秒后开始第一次雨
+    setTimeout(spawnRainGroup, 20000); 
   }
 
   flying = true;
@@ -517,7 +517,7 @@ function spawnFlyChar() {
   el.className = "flyChar";
   el.textContent = ch;
 
-  // 随机大小
+  
   const size = Math.random() * 24 + 20;
   el.style.fontSize = size + "px";
 
@@ -531,7 +531,7 @@ function spawnFlyChar() {
  
 updateStatus();
 
-  // 为这个飞字建立一个对象，方便追踪
+
   const obj = {
     el: el,
     char: ch,
@@ -544,14 +544,13 @@ updateStatus();
   let speed = 2;
 
   function animate() {
-    // 如果已经被救或已结算，直接结束
+   
+    
     if (obj.resolved) return;
 
-    // 如果被“打中”了（在 keydown 里会设置）
     if (obj.caught) {
       obj.resolved = true;
       el.remove();
-      // 从数组里移除这个对象
       activeFlyChars = activeFlyChars.filter(o => o !== obj);
       return;
     }
@@ -576,7 +575,7 @@ updateStatus();
 
   animate();
 
-  // 每隔 400ms 生成一个新字
+  // 400ms new new words
   setTimeout(spawnFlyChar, 400);
 }
 
@@ -590,11 +589,11 @@ updateStatus();
 
 //彩色字符坏
 
-// 每 20 秒下“一群字”
+
 function spawnRainGroup() {
   if (!rainCharPool.length) return;
 
-  const groupSize = 6; // 一次掉 10 个字，你可以改大/改小
+  const groupSize = 10; 
 
   for (let i = 0; i < groupSize; i++) {
     setTimeout(() => {
@@ -630,7 +629,7 @@ function spawnRainCharDown() {
   const size = Math.random() * 40 + 20;
   el.style.fontSize = size + "px";
 
-  // 固定定位：从屏幕上方某个随机 x 掉下来
+  
   el.style.position = "fixed";
   el.style.top = "-40px";
   el.style.left = Math.random() * window.innerWidth + "px";
@@ -638,7 +637,6 @@ function spawnRainCharDown() {
 
   document.body.appendChild(el);
 
-  // 💔 每出现一个坏字：monster -1
   monsterLife -= 1;
   updateStatus();
 
@@ -664,6 +662,7 @@ function spawnRainCharDown() {
       obj.resolved = true;
       if (!obj.caught) {
         humanLife -= 2;
+        monsterLife +=1;
         triangleLife -= 2;
         triangleFlash = 1;
         updateStatus();
@@ -696,7 +695,7 @@ window.addEventListener("keydown", (e) => {
   const key = e.key;
   if (!key || key.length !== 1) return;
 
-  // ⭐ 先判断雨字
+ 
   const rainTarget = rainChars.find(obj =>
     !obj.resolved &&
     !obj.caught &&
@@ -706,7 +705,7 @@ window.addEventListener("keydown", (e) => {
  if (rainTarget) {
   rainTarget.caught = true;
 
-  // 🔥 从 DOM 删除
+  
   rainTarget.el.remove();
 
   // 🔥 从数组移除
