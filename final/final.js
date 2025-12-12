@@ -476,6 +476,7 @@ updateStatus();
 
 flyBtn.addEventListener("click", () => {
   gameStarted = true;
+  skipBtn.style.display = "none";
     monsterBox.style.display = "block";
 monsterBarContainer.style.display = "block";
 
@@ -843,6 +844,7 @@ playNextBtn.addEventListener("click", () => {
 
   if (playIndex >= playDialogue.length) {
     // 对话结束 → 关闭界面，显示 flyBtn
+    skipBtn.style.display = "none";
     playScreen.style.display = "none";
     flyBtn.style.display = "block";
     return;
