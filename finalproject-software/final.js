@@ -2,7 +2,7 @@
 
 
 
-// ====== 三血条系统 ======
+
 let gameStarted = false;
 let monsterLife = 100;     
 let triangleLife = 100;    
@@ -10,11 +10,11 @@ let humanLife = 0;
 let triangleFlash = 0;  
 let mistakeCount = 0;          
 
-let activeFlyChars = [];   // 当前从下往上飞的字（你原来的）
-let rainChars = [];        // 从上往下掉的“坏字”
+let activeFlyChars = [];   
+let rainChars = [];        
 let rainCharPool = [];   
 let rainStarted = false;
-// ====== 显示模块 ======
+
 const ageInput  = document.querySelector(".agetext");
 const textbox   = document.getElementById("dialog");
 const agehold   = document.querySelector(".agehold");
@@ -33,7 +33,7 @@ const ko = document.querySelector(".ko");
 const norain = document.querySelector(".norain");
 const humanmonster = document.querySelector(".humanmonster");
 humanmonster.style.display = "none"; 
-// --- Monster ---
+// Monster (sky)
 const monsterBox = document.createElement("div");
 monsterBox.style.position = "fixed";
 monsterBox.style.top = "15px";
@@ -67,12 +67,12 @@ monsterBarFill.style.background = "black";
 monsterBarFill.style.borderRadius = "10px";
 monsterBarContainer.appendChild(monsterBarFill);
 
-// --- Triangle (pet) ---
+//Triangle (pet)
 const triangleBox = document.createElement("div");
 triangleBox.style.position = "fixed";
 triangleBox.style.top = "60px";
 triangleBox.style.left = "50%";
-triangleBox.style.opacity = "1";
+triangleBox.style.opacity = "0";
 triangleBox.style.transform = "translateX(-50%)";
 triangleBox.style.zIndex = "3000";
 triangleBox.style.color = "white";
@@ -86,7 +86,7 @@ const triangleBarContainer = document.createElement("div");
 triangleBarContainer.style.position = "fixed";
 triangleBarContainer.style.top = "80px";
 triangleBarContainer.style.left = "50%";
-triangleBarContainer.style.opacity = "1";
+triangleBarContainer.style.opacity = "0";
 triangleBarContainer.style.transform = "translateX(-50%)";
 triangleBarContainer.style.width = "500px";
 triangleBarContainer.style.height = "8px";
@@ -99,12 +99,12 @@ document.body.appendChild(triangleBarContainer);
 const triangleBarFill = document.createElement("div");
 triangleBarFill.style.height = "100%";
 triangleBarFill.style.width = "100%";
-triangleBarFill.style.opacity = "1";
+triangleBarFill.style.opacity = "0";
 triangleBarFill.style.background = "white";
 triangleBarFill.style.borderRadius = "10px";
 triangleBarContainer.appendChild(triangleBarFill);
 
-// --- Human ---
+// Human 
 const humanBox = document.createElement("div");
 humanBox.style.position = "fixed";
 humanBox.style.top = "105px";
@@ -112,7 +112,7 @@ humanBox.style.left = "50%";
 humanBox.style.transform = "translateX(-50%)";
 humanBox.style.zIndex = "3000";
 humanBox.style.color = "white";
-humanBox.style.opacity = "1";
+humanBox.style.opacity = "0";
 humanBox.style.fontFamily = "Times New Roman";
 humanBox.style.fontSize = "16px";
 humanBox.textContent = "Human: " + humanLife.toFixed(1);
@@ -130,7 +130,7 @@ humanBarContainer.style.border = "1px solid white";
 humanBarContainer.style.borderRadius = "10px";
 humanBarContainer.style.zIndex = "2999";
 humanBarContainer.style.display = "none";
-humanBarContainer.style.opacity = "1";
+humanBarContainer.style.opacity = "0";
 document.body.appendChild(humanBarContainer);
 
 const humanBarFill = document.createElement("div");
@@ -138,11 +138,11 @@ humanBarFill.style.height = "100%";
 humanBarFill.style.width = "1%";
 humanBarFill.style.background = "yellow";
 humanBarFill.style.borderRadius = "10px";
-humanBarFill.style.opacity = "1";
+humanBarFill.style.opacity = "0";
 humanBarContainer.appendChild(humanBarFill);
 
 
-// --- Super Bar (monster + human) ---
+// Super Bar (monster + human) 
 const superBox = document.createElement("div");
 superBox.style.position = "fixed";
 superBox.style.bottom = "60px";
@@ -177,7 +177,7 @@ superBarFill.style.borderRadius = "10px";
 superBarContainer.appendChild(superBarFill);
 
 
-// ====== 更新全部血条 ======
+
 function updateStatus() {
 
 
@@ -186,7 +186,7 @@ function updateStatus() {
 
   superBox.textContent = "Our Life: " + superValue.toFixed(1);
 
-  // 假设最大值 200（monster100 + human100）
+
   let percent = Math.min(superValue / 200 * 100, 100);
   superBarFill.style.width = percent + "%";
 
@@ -205,14 +205,14 @@ function updateStatus() {
   humanBarFill.style.width    = Math.min(humanLife, 100) + "%";
 
 
-    // ❗ Human 死亡逻辑
+    // human
     if (gameStarted){
   if (humanLife <= 0) {
     humanLife = 0;
     flying = false;
     rainStarted = false;
 
-    // 隐藏血条
+    // hid
     monsterBox.style.display = "none";
     monsterBarContainer.style.display = "none";
     triangleBox.style.display = "none";
@@ -222,16 +222,16 @@ function updateStatus() {
     superBox.style.display = "none";
     superBarContainer.style.display = "none";
 
-    // 🎯 Human=0 → 根据 Triangle 生命判断结局
+    //  Human=0 
    if (monsterLife > 10){
     if (triangleLife > 10) {
-      // 结局1
+      //1
       const trianglemonster = document.querySelector(".trianglemonster");
       trianglemonster.style.display = "block";
       backcolor.style.display = "block";
       refresh.style.display = "block";
     } else if (triangleLife <= 10) {
-      // 结局2
+      //2
       const monster = document.querySelector(".monster");
       monster.style.display = "block";
       backcolor.style.display = "block";
@@ -256,13 +256,13 @@ function updateStatus() {
     }
 
 
-  // ❗ 怪物死了
+  // monster=0
   if (monsterLife <= 0) {
       monsterLife = 0;
     flying = false;
     rainStarted = false;
 
-    // 结束时隐藏血条
+    
     monsterBox.style.display = "none";
     monsterBarContainer.style.display = "none";
     triangleBox.style.display = "none";
@@ -272,9 +272,9 @@ function updateStatus() {
     superBox.style.display = "none";
     superBarContainer.style.display = "none";
 
-    // 🎯 分两种结局
+    // end 1+2
     if (mistakeCount >= 20) {
-        // ❌ 坏结局 1
+        // 1
         const human = document.querySelector(".human");
        human.style.display = "block";
        refresh.style.display = "block";
@@ -285,7 +285,7 @@ function updateStatus() {
        refresh.style.display = "block";
     }
 
-    refresh.style.display = "block"; // 显示 Retry 按钮
+    refresh.style.display = "block"; 
     return;
 }
 
@@ -295,17 +295,17 @@ function updateStatus() {
 
 
   
-  // ❗ 宠物死了
-  // ❗ Triangle 生命值检查
+  // pet=0
+  
 if (triangleLife <= 0) {
 
   if (humanLife > 50) {
 
-    // 人类消耗 10，Triangle 获得 10
+    //rebirth
     humanLife -= 10;
     triangleLife = 10;
         showLifeSplitPopup();
-  // 立刻更新画面
+
     triangleBox.textContent = "Triangle: " + triangleLife.toFixed(1);
     triangleBarFill.style.width = triangleLife + "%";
 
@@ -314,15 +314,13 @@ if (triangleLife <= 0) {
 
   } else {
 
-    // Human 无力救援 → 游戏结束
+    
     flying = false;
     humanmonster.style.display = "block";
     refresh.style.display = "block";
     backcolor.style.display = "block";
 
-    // 如果你有 KO 屏幕可以在这里触发：
-    // ko.style.display = "block";
-    // refresh.style.display = "block";
+
   }
 }
 }
@@ -338,8 +336,8 @@ if (triangleLife <= 0) {
 
 
 
-let allowedChars = [];   // 允许飞的字符（从名字里筛出来）
-let flying = false;      // 是否正在飞字
+let allowedChars = [];   
+let flying = false;      
 
 let generatepetform = false;
 let petform = [];
@@ -424,11 +422,10 @@ updateStatus();
     let x, y;
 
     if (i === 0) {
-      // 第一段身体
+      
       x = 0;
       y = 50;
     } else {
-      // 连接到上一块
       let prev = petform[i - 1];
       x = prev.x + ((Math.random() - 0.5) * 150);
       y = prev.y + ((Math.random() - 0.5) * 150);
@@ -439,7 +436,7 @@ updateStatus();
       x: x,
       y: y,
       size: Math.random() * 60 + 40,
-      rotateAngle: Math.random() * 360,   // drawScene() 正在用
+      rotateAngle: Math.random() * 360,   
       colorR: Math.random() * 155 + 100,
       colorG: Math.random() * 155 + 100,
       colorB: Math.random() * 155 + 100
@@ -455,7 +452,7 @@ updateStatus();
 
 
 
-  // 🔹 构建“名字里没有的字符池” A-Z + 0-9
+  
   let allChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   rainCharPool = allChars
     .split("")
@@ -611,7 +608,7 @@ function spawnRainGroup() {
   setTimeout(showRainWarning, 27000);
   setTimeout(spawnRainGroup, 30000);
 }
-// 生成一个从上往下掉的彩色坏字
+
 function spawnRainCharDown() {
   if (!rainCharPool.length) return;
 
@@ -650,8 +647,8 @@ function spawnRainCharDown() {
   rainChars.push(obj);
 
   const startTime = performance.now();
-  const duration = 5000;              // 3 秒飞完整个屏幕
-  const endY = window.innerHeight+40; // 掉出屏幕
+  const duration = 5000;              
+  const endY = window.innerHeight+40; 
 
   function step(now) {
     if (obj.resolved) return;
@@ -659,7 +656,7 @@ function spawnRainCharDown() {
     const tNorm = (now - startTime) / duration;
 
     if (tNorm >= 1) {
-      // 到底了，还没被打中 → 惩罚 human & triangle
+     
       obj.resolved = true;
       if (!obj.caught) {
         humanLife -= 2;
@@ -709,18 +706,18 @@ window.addEventListener("keydown", (e) => {
   
   rainTarget.el.remove();
 
-  // 🔥 从数组移除
+ 
   rainChars = rainChars.filter(o => o !== rainTarget);
 
-  // 🔥 加血逻辑
+ 
   humanLife += 1;
   triangleLife += 1;
 
   updateStatus();
-  return; // 重要：阻止后续飞字判断
+  return; 
 }
 
-  // ⭐ 再判断飞字
+  
   const target = activeFlyChars.find(obj =>
     !obj.resolved &&
     !obj.caught &&
@@ -735,7 +732,7 @@ window.addEventListener("keydown", (e) => {
     return;
   }
 
-  // ❌ 两边都没 hit
+  
   triangleLife += 0.5;
   mistakeCount++;
   humanLife -= 1;
@@ -747,7 +744,7 @@ function showRainWarning() {
   const warn = document.getElementById("rainWarning");
   warn.style.display = "block";
 
-  // 3 秒后自动消失
+  // 3 
   setTimeout(() => {
     warn.style.display = "none";
   }, 3000);
@@ -811,7 +808,7 @@ window.onclick = () => {
 
 
 
-// === 新的 Play Dialogue 系统 ===
+// dialouge 2
 const playScreen = document.getElementById("playScreen");
 const playText   = document.getElementById("playText");
 const playNextBtn = document.getElementById("playNextBtn");
@@ -843,7 +840,7 @@ playNextBtn.addEventListener("click", () => {
   playIndex++;
 
   if (playIndex >= playDialogue.length) {
-    // 对话结束 → 关闭界面，显示 flyBtn
+    
     skipBtn.style.display = "none";
     playScreen.style.display = "none";
     flyBtn.style.display = "block";
@@ -868,7 +865,7 @@ function showLifeSplitPopup() {
   const pop = document.getElementById("lifeSplitPopup");
   pop.classList.add("show");
 
-  // 1.5 秒后消失
+  // 1.5 
   setTimeout(() => {
     pop.classList.remove("show");
   }, 1500);
@@ -891,7 +888,7 @@ function showLifeSplitPopup() {
 let camSide, camBottom;
 let t = 0;
 let humanBounce = 0;
-let humanImgs = [];        // 存三张 human 图
+let humanImgs = [];        
 let currentHumanIndex = 0; 
 let nebulaShader;
 let angle = 0;
@@ -1164,7 +1161,7 @@ let r = noise(t + 20) * 255;
   
   
 
- //那两个type here 
+ //typehere
   push();
 translate(-100, 0, 130); 
 rotateX(-30);            
@@ -1247,14 +1244,14 @@ if (generatepetform && petform.length > 0){
     
     
     let flashColor = lerpColor(
-  color(0, 0, 0),     // 正常黑色
-  color(255, 0, 0),   // 闪红
-  triangleFlash       // 0~1
+  color(0, 0, 0),     
+  color(255, 0, 0),   
+  triangleFlash       
 );
 
 fill(flashColor);
 
-// 让闪红逐渐消失
+
 triangleFlash *= 0.85;
     noStroke();
     
@@ -1302,13 +1299,13 @@ push();
   translate(1000, -200, 0);
   rotateY(-90);
   rotateX(-10);
-  blendMode(BLEND);   // 正常混合模式
+  blendMode(BLEND);  
   let bounceScale = 1 + humanBounce;
-humanBounce *= 0.85;  // 每帧衰减（0.85 越小说明反弹快）
+humanBounce *= 0.85;  
 
 scale(bounceScale);
 
-// --- 绘制 ---
+
 if (humanImgs[currentHumanIndex]) {
   texture(humanImgs[currentHumanIndex]);
   plane(1366, 1024);
@@ -1322,20 +1319,19 @@ if (humanImgs[currentHumanIndex]) {
 
 
 
-// === Triangle 的 3D 血条（没有文字） ===
+//Triangle life
 push();
 
-// 放在白色 cage 上面一点点
+
 translate(0, -200, 800);
 rotateZ(90);
-   // x,y,z 可以自己慢慢调位置
-// 如果你不想它自己转，就不要 rotate；现在它只是跟整个场景一起转
+
 // rotateY(0); 
 
-let maxLen = 500;  // 血条最长的长度
+let maxLen = 500;  
 let ratio = constrain(triangleLife / 100, 0, 1);  // 0~1
 
-// 背景条（灰色）
+
 noStroke();
 fill(255, 255, 255, 220);
 beginShape();
@@ -1345,7 +1341,7 @@ beginShape();
   vertex(-maxLen / 2, 20, 0);
 endShape(CLOSE);
 
-// 前景条（红色，根据血量缩短）
+
 fill(0, 0, 0, 230);
 let currentLen = maxLen * ratio;
 beginShape();
