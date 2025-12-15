@@ -13,7 +13,7 @@ body{
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  11background:radial-gradient(circle, transparent 40%, black 50%, transparent 70%);
+  background:radial-gradient(circle, transparent 40%, black 50%, transparent 70%);
   animation: turn 2s infinite;
   filter: blur(5px);
 
@@ -497,6 +497,9 @@ body{
   animation: bounce 6s infinite;
 }
 
+
+
+
 .front{
   background-color: white;
   opacity: 1;
@@ -504,13 +507,13 @@ body{
   position:absolute ;
   height: 2000px;
   width: 2000px;
-  z-index: 10;
+  z-index: 100;
   transform: all 0.6s ease;
 }
 .front.show{
   opacity: 1;
   display: block;
-  z-index: 100;
+  z-index: 1000;
 
 }
 .butt1{
@@ -539,7 +542,7 @@ body{
   position: fixed;
   height: 200px;
   width: 200px;
-  z-index: 110;
+  z-index: 1100;
   border-radius: 50%;
   transform: translate(-40%, -180%);
   animation: fall 1s forwards;
@@ -550,7 +553,7 @@ body{
   position: fixed;
   height: 200px;
   width: 200px;
-  z-index: 110;
+  z-index: 1100;
   border-radius: 50%;
   transform: translate(40%, -180%);
   animation: fall2 1s forwards;
@@ -593,8 +596,8 @@ body{
 }
 .shit.show.animate{
   animation: drop 3s ease-in forwards;
-  animation-delay: 3s;
-  z-index: 105;
+  animation-delay: 0.6s;
+  z-index: 1050;
 }
 
 @keyframes drop {
@@ -623,6 +626,34 @@ body{
   }
 }
 
+
+.shitwords{
+  font-size: 30px;
+  font-family: Baskerville;
+  font-weight: italic;
+  background-color: transparent;
+  display: flex;
+  position: fixed;
+  color: rgb(0, 0, 0);
+  bottom:10%;
+  z-index: 3000;
+  opacity: 0;
+  transition: all 4s ease;
+}
+.shitwords.show{
+  font-size: 23px;
+  font-family: Baskerville;
+  font-weight: italic;
+  background-color: transparent;
+  display: flex;
+  position: fixed;
+  color: rgb(0, 0, 0);
+  bottom:10%;
+  z-index: 3000;
+  opacity: 1;
+  transition: all 5s ease-in;
+ 
+}
 
 
 

@@ -9,9 +9,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const butt2 = document.querySelectorAll('.butt2');
   const shit = document.querySelectorAll('.shit');
   const word = document.querySelectorAll('.word');
+  const shitwords = document.querySelectorAll('.shitwords');
   let clickCount = 0;
+  let finaleTriggered = false;
+  let poopReady = false;
 
 console.log("JS loaded");
+
+  shit.forEach(function(div) {
+    div.addEventListener('click', function(event) {
+      if (!poopReady) {
+        event.preventDefault();
+        event.stopPropagation();
+        return;
+      }
+      window.location.reload();
+    });
+  });
 
   buttons.forEach(function(button) {
     button.addEventListener('click', function () {
@@ -186,27 +200,39 @@ console.log("JS loaded");
       }
 
 
-      if (clickCount === 75) {  
+      if (clickCount === 70) {  
         button.classList.add('biggest')
       }
 
 
 
-      if (clickCount === 80) {  
+      if (!finaleTriggered && clickCount >= 75) {  
+        finaleTriggered = true;
+        poopReady = true;
         fronts.forEach(function(div) {
           div.classList.add('show');
+          div.style.display = 'block';
+          div.style.opacity = '1';
         });
         butt1.forEach(function(div) {
           div.classList.add('show');
+          div.style.opacity = '1';
         });
         butt2.forEach(function(div) {
           div.classList.add('show');
+          div.style.opacity = '1';
+        });
+         shitwords.forEach(function(div) {
+          div.classList.add('show');
+          div.style.opacity = '1';
         });
         shit.forEach(function(div) {
+          div.classList.remove('animate');
           div.classList.add('show');
-        });
-        shit.forEach(function(div) {
-          div.classList.add('show');
+          div.style.opacity = '1';
+          div.style.display = 'block';
+          void div.offsetWidth; // force reflow so the animation can restart
+          div.classList.add('animate');
         });
       }
     });
