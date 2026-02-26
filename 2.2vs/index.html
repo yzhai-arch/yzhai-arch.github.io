@@ -129,9 +129,12 @@ background-color: black;
   filter: brightness(0.3);
 
   z-index: 100;
-  animation: turnturn1 30s infinite;
+  animation: turnturn1 80s infinite;
 }
-
+@keyframes turnturn1 {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
 
 .fire{
  position: fixed;
