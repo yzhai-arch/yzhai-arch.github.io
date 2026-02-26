@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CSS Composition Template</title>
+    <style>
+     body {
+   margin: 0;
+   background-color: white;
+   height: 130vh;
+   width: 100vw;
+   position: relative;
+   font-family: sans-serif;
+ }
+
+
+ .human {
+   background-color: transparent;
+   background-image: url("human1.GIF");
+   background-size: cover;
+   position: fixed;
+   height: 700px;
+   width: 1000px;
+   top: -10%;
+   z-index: 100;
+    left: 50%;                     /* 改 */
+  transform: translateX(-50%); 
+   transition: all 0.6s ease;
+ }
+  
+.inbackground{
+  position: fixed;      /* 关键 */
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+background-color: black;
+  z-index: 1;  
+ 
+}
+
+.furnitur{
+  background-image: url("furniture.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: fixed;
+  top: -70px;
+  left: 50%;
+    transform: translateX(-50%);
+  width: 90vw;
+  height: 90vh;
+  z-index: 40;
+}
+.pol{
+  background-image: url("polr.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+
+  
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  filter: blur(6px);
+}
+
+
+.fires{
+  position: fixed;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  background-image: url("thefire.png");
+  background-size: contain;   /* 改这里 */
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: divide ("50%");
+  z-index: 101;
+  
+}
+.eyes{
+  background-image: url("eyes.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: fixed;
+  top: 55%;
+  left: 49%;
+    transform: translate(-50%, -50%);
+  width: 1200px;
+  height: 900px;
+  z-index: 102;
+}
+.fire1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background-image: url("thefire.png");
+  background-size: contain;   /* 改这里 */
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: divide ("50%");
+}
+.thebigfire{
+ position: fixed;
+
+  top: 25%;
+  left: 48.5%;
+  transform: translate(-50%, -50%);
+
+  width: 1400px;
+  height: 1400px;
+
+  background-image: url("fire.png");
+  background-size: contain;   /* 改这里 */
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: divide ("50%");
+  filter: brightness(0.3);
+
+  z-index: 100;
+  animation: turnturn1 30s infinite;
+}
+
+
+.fire{
+ position: fixed;
+
+  top: 82%;
+  left: 51.5%;
+  transform: translate(-50%, -50%);
+
+  width: 800px;
+  height: 800px;
+
+  background-image: url("fire.png");
+  background-size: contain;   /* 改这里 */
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: divide ("50%");
+
+  z-index: 101;
+  animation: turnturn 30s infinite;
+}
+
+@keyframes turnturn {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+.ground{
+
+  background-color: rgb(0, 0, 0);
+position:fixed;
+  z-index: 30900;
+  height: 5000px;
+  width: 5000px;
+  top: 190%;
+left:50%;
+  transform: translate(-50%, -50%);
+  border-radius:50%;
+
+}
+
+
+
+
+
+
+
+ 
+.background{
+  position: fixed;      /* 关键 */
+  top: 0;
+  left: 0;
+
+  width: 200vw;
+  height: 200vh;
+
+  background-image: url("rainbow.gif");
+  background-size: cover;
+  background-position: center;
+
+  z-index: 170;  
+ filter: contrast(0.2) brightness(0.4);
+}
+
+  .enter1 {
+   background-color: transparent;
+   background-image: url("enter1.PNG");
+   background-size: cover;
+   position: relative;
+   height: 100%;
+   width: 100%;
+   z-index: 190;
+   display: flex;
+   transition: all 0.6s ease;
+ }
+   .enter {
+   background-color: transparent;
+   position: absolute;
+   height: 200px;
+   width: 200px;
+   top: 50%;
+   left: 70%;
+   z-index: 200;
+  display: flex;
+   transition: all 0.6s ease;
+ }
+ .hide{
+  opacity:0;
+  pointer-events:none;
+}
+
+
+
+.sun{
+  background-color: aliceblue;
+  background1: radial-gradient(circle, gray 10%, gray 50%, transparent 70%);
+  position:fixed;
+  z-index: 20;
+  height: 1500px;
+  width: 1500px;
+  top: 70%;
+left:50%;
+  transform: translate(-50%, -50%);
+  border-radius:50%;
+  animation: sunlight 8s infinite;
+}
+@keyframes sunlight{
+  0%{
+    background-color: ;
+    background: radial-gradient(circle,rgb(0, 0, 0) 40%, rgb(125, 44, 0) 50%, transparent 70%);
+    opacity: 30%;
+    transform: translate(-50%, -50%) scale(1);
+
+  }
+  50%{
+    background-color: gray;
+    background: radial-gradient(circle,rgb(0, 0, 0) 40%, rgb(125, 44, 0) 50%,transparent 70%);
+    opacity: 70%;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100%{
+    background-color: aliceblue;
+    background: radial-gradient(circle,rgb(0, 0, 0) 40%,rgb(125, 44, 0) 50%, transparent 70%);
+    opacity: 30%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.sun2{
+  background-color: rgb(0, 0, 0);
+  background1: radial-gradient(circle, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 50%, transparent 70%);
+  position:fixed;
+  z-index: 19;
+  height: 1700px;
+  width: 1700px;
+  top: 70%;
+left:50%;
+  transform: translate(-50%, -50%);
+  border-radius:50%;
+  animation: sunlight1 8s ease-in-out infinite;
+}
+@keyframes sunlight1{
+  0%{
+    background-color: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgb(0, 0, 0) 30%, rgb(139, 139, 139) 50%, transparent 70%);
+    opacity: 100%;
+
+  }
+  50%{
+    background-color: rgb(0, 0, 0);
+    background: radial-gradient(circle,rgb(0, 0, 0) 30%, rgb(139, 139, 139) 50%, transparent 70%);
+    opacity: 50%;
+  }
+  100%{
+    background-color: rgb(0, 0, 0);
+    background: radial-gradient(circle,rgb(0, 0, 0) 30%, rgb(139, 139, 139) 50%,transparent 70%);
+    opacity: 100%;}
+}
+
+.sun3{
+  background-color: rgb(0, 0, 0);
+  background1: radial-gradient(circle, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 50%, transparent 70%);
+  position:fixed;
+  z-index: 18;
+  height: 1400px;
+  width: 1400px;
+  top:70%;
+left:50%;
+  transform: translate(-50%, -50%);
+  border-radius:50%;
+  animation: sunlight2 8s ease-in-out infinite;
+}
+@keyframes sunlight2{
+  0%{
+    background-color: rgb(81, 17, 17);
+    background: radial-gradient(circle, #000000ca 0%, #4a1f0fca 50%, transparent 70%);
+    opacity: 50%;
+
+  }
+  50%{
+    background-color: rgb(0, 0, 0);
+    background: radial-gradient(circle,#000000ca 0%, #4a1f0fca 50%, transparent 70%);
+    opacity: 100%;
+  }
+  100%{
+    background-color: #4a1f0fca;
+    background: radial-gradient(circle,#000000ca 0%, #4a1f0fca 50%,transparent 70%);
+    opacity: 50%;}
+
+
+}
+.sheep{
+  background-image: url("sheep.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100001;
+  transition: all 0.6s ease;
+  animation: apear 0.6s linear;
+}
+.sheep1{
+  background-image: url("sheep2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100002;
+  transition: all 0.6s ease;
+  animation: apear 0.6s linear;
+}
+.sheep2{
+  background-image: url("sheep3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+    display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100003;
+  transition: all 0.6s ease;
+  animation: apear 0.6s linear;
+}
+@keyframes apear{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.words{
+  position: fixed;
+  top: 85%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: white;
+  font-family: Times New Roman, serif;
+  z-index: 103; 
+  width: 800px;
+  letter-spacing: 9px;
+}
+.save{
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: rgb(212, 212, 212);
+  font-family: Times New Roman, serif;
+  z-index: 103; 
+  width: 800px;
+  letter-spacing: 9px;
+  text-align: center; 
+  transition: all 0.3s ease;
+}
+.save:hover{
+  color: white;
+  filter: drop-shadow(0 0 5px white);
+  transform: translate(-50%, -50%) scale(1.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.gosave{
+  position: fixed;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: white;
+  font-family: Times New Roman, serif;
+  z-index: 1030; 
+  width: 800px;
+  letter-spacing: 9px;
+  text-align: center;
+
+  opacity: 0;                 /* 初始透明 */
+  transition: opacity 0.6s ease;  /* 渐变 */
+}
+.words1{
+  position: fixed;
+  top: 85%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  font-family: Times New Roman, serif;
+  z-index: 1000003; 
+  width: 800px;
+  letter-spacing: 9px;
+  display: none;
+  transition: all 0.6s ease;
+}
+.words12{
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font-family: Times New Roman, serif;
+  z-index: 1000003; 
+  width: 800px;
+  letter-spacing: 3px;
+  text-align: center; 
+  display: none;
+  }
+  .words13{
+      position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  font-family: Times New Roman, serif;
+  z-index: 1000003; 
+  width: 800px;
+  letter-spacing: 6px;
+  text-align: center; 
+  display: none;
+  }
+.help{
+  position: fixed;
+  top: 60%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: white;
+  font-family: Times New Roman, serif;
+  z-index: 100003; 
+  width: 800px;
+  letter-spacing: 9px;
+  animation: adisapear 4s infinite;
+  
+}
+@keyframes adisapear {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  
+}
+}
+.help1{
+  position: fixed;
+  top: 70%;
+  left: 120%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: white;
+  font-family: Times New Roman, serif;
+  z-index: 100003; 
+  width: 800px;
+  letter-spacing: 9px;
+  animation: adisapear1 8s infinite;
+}
+@keyframes adisapear1 {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  
+}
+}
+</style>
+
+  </head>
+  <body>
+    <div class="human"></div>
+    <div class="human0"></div>
+    <div class="inbackground"></div>
+    <div class="fire"></div>
+     <div class="thebigfire"></div>
+
+
+      <div class="help">ehl..p</div>
+      <div class="help1">mh...elllp</div>
+     <div class="words">wilh yoe save me pleaseh...</div>
+     <div class="save">save her</div>
+     <div class="gosave">there is someone in the fire</div>
+<div class="words1">meh mehhh... mehhh me mehh</div>
+<div class="words12">translate: will you still save me if I'm a sheep?</div>
+<div class="words13">you slept too late last night and had a blury vision, and now you saved a sheep! You are a good person! </div>
+<div class="sheep"></div>
+<div class="sheep1"></div>
+<div class="sheep2"></div>
+
+    <div class="fires">
+       <div class="fire1"></div>
+    <div class="fire2"></div>
+    <div class="fire3"></div>
+    <div class="fire4"></div>
+    <div class="fire5"></div>
+    </div>
+   <div class="eyes"></div>
+    <div class="strings"></div>
+    <div class="sky"></div>
+    <div class="pole"></div>
+    <div class="furniture"></div>
+
+    
+    <div class="enter1"><div class="enter"></div></div>
+    <div class="enter2"></div>
+     <div class="background"></div>
+  
+    <div class="suncover"></div>
+  
+
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+
+    <script >
+    const enter = document.querySelector(".enter");
+const enter1 = document.querySelector(".enter1");
+const background = document.querySelector(".background");
+const help = document.querySelector(".help");
+const help1 = document.querySelector(".help1");
+
+enter.addEventListener("mouseenter", () => {
+  enter1.style.backgroundImage = 'url("enter2.PNG")';
+ 
+});
+
+enter.addEventListener("mouseleave", () => {
+  enter1.style.backgroundImage = 'url("enter1.PNG")';
+});
+enter.addEventListener("click", () => {
+  enter.style.display = "none";
+  enter1.style.display = "none";
+  background.style.display = "none";
+  gosave.style.display = "none";  
+  help.style.display = "none";
+  help1.style.display = "none";
+});
+const gosave = document.querySelector(".gosave");
+
+enter.addEventListener("mouseenter", () => {
+  enter1.style.backgroundImage = 'url("enter2.PNG")';
+  gosave.style.opacity = "1";     // 显示
+});
+
+enter.addEventListener("mouseleave", () => {
+  enter1.style.backgroundImage = 'url("enter1.PNG")';
+  gosave.style.opacity = "0";     // 变回透明
+});
+const save = document.querySelector(".save");
+const sheep = document.querySelector(".sheep");
+const sheep1 = document.querySelector(".sheep1");
+const sheep2 = document.querySelector(".sheep2");
+const words1 = document.querySelector(".words1");
+const words12 = document.querySelector(".words12");
+const words13 = document.querySelector(".words13");
+
+
+// Event listener for the "save her" text
+save.addEventListener("click", () => {
+  // Show the first sheep
+  sheep.style.display = "block";
+  
+  // After 1 second, hide the first sheep and show the second
+  setTimeout(() => {
+    
+    sheep1.style.display = "block";
+  }, 1000);
+  
+  // After 2 seconds (1 second for sheep1 to display), hide sheep1 and show sheep2
+  setTimeout(() => {
+    
+    sheep2.style.display = "block";
+    words1.style.display = "block";
+    words12.style.display = "block";
+    words13.style.display = "block";
+  }, 2000);
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+ body {
+   margin: 0;
+   background-color: white;
+   height: 130vh;
+   width: 100vw;
+   position: relative;
+   font-family: sans-serif;
+ }
+
+
+ .human {
+   background-color: transparent;
+   background-image: url("human1.GIF");
+   background-size: cover;
+   position: fixed;
+   height: 700px;
+   width: 1000px;
+   top: -30%;
+   z-index: 10;
+   left: 20%;
+   transition: all 0.6s ease;
+ }
+  .human.big {
+   background-color: transparent;
+   background-image: url("human.png");
+   background-size: cover;
+   position: fixed;
+   height: 1000px;
+   width: 1000px;
+   top: -150px;
+   z-index: 10;
+   left: 20%;
+ }
+
+ .human0 {
+   background-color: black;
+   background-image: url("human.png");
+   background-size: cover;
+   position: fixed;
+   height: 300px;
+   width: 800px;
+   border-radius: 100%;
+   z-index: 9;
+   left: 40%;
+   top: 340px;
+   filter: blur(10px);
+   background: radial-gradient(at bottom left, black 20%, transparent 50%);
+   mix-blend-mode: multiply;
+   opacity: 0.9;
+   transition: all 0.6s ease;
+ }
+
+ .background1 {
+   z-index: 2;
+   position: absolute;
+   height: 28%;
+   width: 100%;
+   background: linear-gradient(black 60%, white);
+   transition: all 0.6s ease;
+   
+ }
+ .background1.big {
+   background: linear-gradient(white 60%, black);
+ }
+
+ .blackt {
+   position: absolute;
+   color: white;
+   font-family: "Times New Roman";
+   mix-blend-mode: screen;
+   z-index: 9;
+   transition: all 0.6s ease;
+ }
+
+ .background0 {
+   z-index: 1;
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   background-color: white;
+   transition: all 0.6s ease;
+   
+ }
+  .enter1 {
+   background-color: transparent;
+   background-image: url("enter1.PNG");
+   background-size: cover;
+   position: relative;
+   height: 100%;
+   width: 100%;
+ 
+   z-index: 19;
+  
+   transition: all 0.6s ease;
+ }
+   .enter {
+   background-color: red;
+   position: absolute;
+   height: 200px;
+   width: 200px;
+   top: 50%;
+   left: 70%;
+   z-index: 20;
+  
+   transition: all 0.6s ease;
+ }
