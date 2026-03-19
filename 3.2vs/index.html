@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CSS Composition Template</title>
+    <style>
+     body {
+   margin: 0;
+   background-color: white;
+   height: 130vh;
+   width: 100vw;
+   position: relative;
+   font-family: sans-serif;
+ }
+
+.human {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100vh;
+  z-index: 100;
+}
+
+.human img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+ .background {
+    position: fixed;
+  bottom: -80vh;
+  left: 53%;
+  transform: translateX(-50%);
+
+  height: 250vh;      /* 永远等于屏幕高度 */
+  width: 500vw;        /* 关键：宽度自动按比例 */
+
+  background-image: url("background4.png");
+  background-size: contain;   /* 保持比例 */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  z-index: 90;
+   animation: bgLight 12s ease-in-out infinite; 
+ }
+
+
+
+.theback  {
+    position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 200vh;      /* 永远等于屏幕高度 */
+  width: 100vw;        /* 关键：宽度自动按比例 */
+  background-size: contain;   /* 保持比例 */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-color: rgba(255, 0, 0, 0.5); /* 半透明遮罩 */
+
+  z-index: 80;
+ }
+.sea  {
+    position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+background-image: url("water.gif");
+  height: 200vh;      /* 永远等于屏幕高度 */
+  width: 400vw;        /* 关键：宽度自动按比例 */
+  background-size: contain;   /* 保持比例 */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-color: rgba(255, 0, 0, 0.5); /* 半透明遮罩 */
+filter: grayscale(1);
+  z-index: 80;
+ }
+
+
+
+.wheel {
+  position: absolute;
+  bottom: -5%;
+  left: 52%;
+ 
+  height: 100vh;
+  z-index: 98;
+}
+
+.wheel img {
+  height: 29vh;
+  width: auto;
+  display: block;
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(30deg);
+  }
+  30% {
+    transform: rotate(80deg);
+  }
+  40% {
+    transform: rotate(60deg);
+  }
+  45% {
+    transform: rotate(55deg);
+  }
+   46% {
+    transform: rotate(55deg);
+  }
+  70% {
+    transform: rotate(80deg);
+  }  
+  73% {
+    transform: rotate(79deg);
+  }  
+   80% {
+    transform: rotate(60deg);
+  }  
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.handle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100vh;
+  z-index: 100;
+  
+}
+
+.handle img {
+  height: 100vh;
+  width: auto;
+  display: block;
+  animation: rotateHandle 6s linear infinite;
+}
+@keyframes rotateHandle {
+  0% {
+    transform: rotate(0deg);
+  }
+20%{
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.sushi {
+ position: absolute;
+  bottom: -45%;
+  left: 20%;
+  height: 100vh;
+  z-index: 98;
+}
+
+.sushi img {
+  height: 10vh;
+  width: auto;
+  display: block;
+  animation: enlarge 6s linear infinite;
+}
+
+.grades {
+ position: absolute;
+  bottom: -45%;
+  left: 20%;
+  height: 100vh;
+  z-index: 98;
+}
+
+.grades img {
+  height: 15vh;
+  width: auto;
+  display: block;
+  animation: enlarge 6s linear infinite;
+}
+
+.scene {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100vh;
+  width: 100vw; 
+  z-index: 100;
+}
+.r5{
+  background-color: transparent;
+  background-image: url("circle6.png");
+  background-size: 100% 100%;
+  height: 1024px;
+  width: 1366px;
+  left: 600px;
+  position: absolute;
+  top: -200px;
+  animation: rotate1 1s infinite;
+  
+}
+@keyframes rotate1{
+   0%   { transform: translateX(-50%) rotate(0deg); }
+  30%   { transform: translateX(-50%) rotate(120deg); }
+  60%   { transform: translateX(-50%) rotate(240deg); }
+  90%   { transform: translateX(-50%) rotate(360deg); }
+
+  100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+</style>
+
+  </head>
+  <body>
+   
+    <div class="background"></div>
+    <div class="scene">
+      <div class="human"><img src="human.png" alt="">
+        <div class="sushi"><img src="sushi.gif" alt=""></div>
+        /* <div class=""><img src="grades.gif" alt=""></div> */
+      </div>
+      <div class="wheel"><img src="wheel.png" alt=""></div>
+       <div class="handle"><img src="handle.png" alt=""></div>
+      
+    </div>
+    <div class="words">A+ A A- B+ B B- C+ C C- D F</div>
+    <div class="theback"></div>
+    <div class="sea"></div>
+    <div class="abc"></div>
+
+
+
+    <script >
+
+    
+
+
+    </script>
+  </body>
+</html>
